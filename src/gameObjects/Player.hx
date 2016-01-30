@@ -12,6 +12,7 @@ class Player extends FlxSprite
 {
 	private static var maxVel:Int = 260;
 	
+	
 	var speedX:Float = 20;
 	var speedY:Float = 20;
 	
