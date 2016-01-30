@@ -94,6 +94,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("img/extra_tile.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("img/gameover.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -139,6 +143,14 @@ class ApplicationMain {
 		
 		
 		urls.push ("map/mapTest2.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("map/mapTest2_BACKUP.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("map/mapTest3.csv");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
@@ -231,7 +243,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "31",
+			build: "44",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,
