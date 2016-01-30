@@ -15,6 +15,8 @@ class Player extends FlxSprite
 	var speedX:Float = 20;
 	var speedY:Float = 20;
 	
+	public var ritualObjectHold:RitualObject;
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		
