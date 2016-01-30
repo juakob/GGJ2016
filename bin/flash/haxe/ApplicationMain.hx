@@ -46,6 +46,18 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.FONT);
 		
 		
+		urls.push ("img/tiles.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("map/mapTest.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("map/untitled.tmx");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
 		
 		if (config.assetsPrefix != null) {
 			
@@ -107,7 +119,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "7",
+			build: "14",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,
@@ -125,13 +137,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 480,
+					height: 720,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
 					title: "GGJ2016",
 					vsync: false,
-					width: 800,
+					width: 1280,
 					x: null,
 					y: null
 				},
@@ -149,7 +161,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 800, 480, "000000");
+		openfl.Lib.embed (null, 1280, 720, "000000");
 		#end
 		#else
 		create ();
