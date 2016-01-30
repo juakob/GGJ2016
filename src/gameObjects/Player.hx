@@ -23,23 +23,64 @@ class Player extends FlxSprite
 	override public function update():Void 
 	{
 		super.update();
-		velocity.set(0, 0);
+		var moveX:Bool = false;
+		var moveY:Bool = false;
 		if (FlxG.keys.pressed.LEFT)
 		{
-			velocity.x = -speedX;
-		}
+			velocity.add( -speedX, 0);
+			moveX = true;
+		}  
 		if (FlxG.keys.pressed.RIGHT)
 		{
-			velocity.x = speedX;
-		}
+			velocity.add(speedX, 0);
+			moveX = true;
+		} 
 		if (FlxG.keys.pressed.UP)
 		{
-			velocity.y = -speedY;
-		}
+			velocity.add(0, -speedY);
+			moveY = true;
+		} 
 		if (FlxG.keys.pressed.DOWN)
 		{
-			velocity.y = speedY;
+			velocity.add(0, speedY);
+			moveY = true;
+		} 
+		if (velocity.x > 1000) {
+			velocity.x = 1000;
 		}
+		if (velocity.x < -1000) {
+			velocity.x = -1000;
+		}
+		
+		if (velocity.y > 1000) {
+			velocity.y = 1000;
+		}
+		
+		if (velocity.y < -1000) {
+			velocity.y = -1000;
+		}
+		
+		
+		if (!moveX) {
+			var oldVx:Float = velocity.x;
+			
+			if (oldVx > 0 || oldVx < 0) {
+				velocity.add( -oldVx, 0);
+				if ((velocity.x > 0 && oldVx < 0) || (velocity.x < 0 && oldVx > 0)) {
+					velocity.x = 0;
+				}
+			}
+		}
+		if (!moveY) {
+			var oldVy:Float = velocity.y;
+			if (oldVy > 0 || oldVy < 0) {
+				velocity.add(0, -oldVy);
+				if ((velocity.y > 0 && oldVy < 0) || (velocity.y < 0 && oldVy > 0)) {
+					velocity.y = 0;
+				}
+			}
+		}
+		
 	}
 	
 }
