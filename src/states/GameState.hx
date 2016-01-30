@@ -179,7 +179,7 @@ class GameState extends FlxState
 		
 		if (pentagrams.getFirstAlive() == null) {
 			win = true;
-			FlxG.log.advanced("Win!");
+			FlxG.switchState(new states.WinState());
 		}
 	
 		return win;

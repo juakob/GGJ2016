@@ -24,6 +24,10 @@
 	<assets path="assets/img" rename="img" />
 	<assets path="assets/map" rename="map"/>
 	<assets path="assets/spritesheet" rename="spritesheet"/>
+	<assets path="assets/sounds">
+		<sound path="test_sound.mp3" id="test_sound"/>
+	</assets>
+	
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

@@ -102,6 +102,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("img/win.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("map/mapTest.csv");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -124,6 +128,10 @@ class ApplicationMain {
 		
 		urls.push ("spritesheet/personajes.png");
 		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/sounds/test_sound.mp3");
+		types.push (lime.Assets.AssetType.SOUND);
 		
 		
 		
@@ -187,7 +195,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "1",
+			build: "7",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,
