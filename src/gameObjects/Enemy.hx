@@ -3,8 +3,11 @@ package gameObjects;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxRandom;
+import flixel.util.FlxPath;
+import flixel.util.FlxPoint;
 import flixel.util.loaders.TexturePackerData;
 import openfl.Assets;
+import states.GameState;
 
 /**
  * ...
@@ -43,6 +46,17 @@ class Enemy extends FlxSprite
 		loadGraphicFromTexture(tex1, false, frameName);
 	}
 	
+	
+	public function pathfinding() {
+		var player:Player = GameState.gamestate.player;
+		var pathPoints:Array<FlxPoint> = GameState.gamestate.map.findPath(FlxPoint.get(this.x + this.width / 2, this.y + this.height / 2), FlxPoint.get(player.x + player.width / 2, player.y + player.height / 2));
+		
+		if (pathPoints != null) {
+			//path.start(this, pathPoints);
+		}
+		
+	}
+
 	override public function update():Void 
 	{
 		super.update();

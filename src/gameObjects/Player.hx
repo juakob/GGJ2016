@@ -2,6 +2,7 @@ package gameObjects;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.util.FlxColor;
 
 /**
  * ...
@@ -9,14 +10,16 @@ import flixel.FlxSprite;
  */
 class Player extends FlxSprite
 {
-
-	var speedX:Float = 100;
-	var speedY:Float = 100;
+	private static var maxVel:Int = 260;
+	
+	var speedX:Float = 20;
+	var speedY:Float = 20;
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		
 		super(X, Y);
-		makeGraphic(32, 32);
+		makeGraphic(32, 32,FlxColor.PURPLE);
 		
 	}
 	
@@ -45,22 +48,21 @@ class Player extends FlxSprite
 			velocity.add(0, speedY);
 			moveY = true;
 		} 
-		if (velocity.x > 1000) {
-			velocity.x = 1000;
+		if (velocity.x > maxVel) {
+			velocity.x = maxVel;
 		}
-		if (velocity.x < -1000) {
-			velocity.x = -1000;
-		}
-		
-		if (velocity.y > 1000) {
-			velocity.y = 1000;
+		if (velocity.x < -maxVel) {
+			velocity.x = -maxVel;
 		}
 		
-		if (velocity.y < -1000) {
-			velocity.y = -1000;
+		if (velocity.y > maxVel) {
+			velocity.y = maxVel;
 		}
 		
-		
+		if (velocity.y < -maxVel) {
+			velocity.y = -maxVel;
+		}
+			
 		if (!moveX) {
 			var oldVx:Float = velocity.x;
 			
@@ -80,7 +82,6 @@ class Player extends FlxSprite
 				}
 			}
 		}
-		
 	}
 	
 }
