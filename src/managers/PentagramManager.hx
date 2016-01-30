@@ -21,6 +21,11 @@ class PentagramManager
 	private var ritualObjects:FlxTypedGroup<RitualObject>;
 	private var tileSize:Int = Constants.TAIL_SIZE;
 	
+	public var allPentagramsActives(get, null):Bool;
+	private function get_allPentagramsActives():Bool {
+		return allPentagramsActives;
+	}
+	
 	public static var instance(get, null):PentagramManager;
     private static function get_instance():PentagramManager {
         if(instance == null) {
@@ -33,8 +38,21 @@ class PentagramManager
 		
 	}
 	
+	public function pentagramUpdate(player:Player) {
+		checkRitualObjectsCollision(player);
+		checkPentagramsCollision(player);
+		checkWinCondition();	
+	}
+	
 	public function initPentagrams(state:FlxState) {
 		//PENTAGRAMS
+		loadPentagramObjects(state);
+		
+		//RITUAL OBJECTS
+		loadRitualObjects(state);
+	}
+	
+	private function loadPentagramObjects(state:FlxState) {
 		pentagrams = new FlxTypedGroup<Pentagram>();
 		var pentagram:Pentagram;
 		
@@ -51,8 +69,9 @@ class PentagramManager
 		pentagrams.add(pentagram);
 		
 		state.add(pentagrams);
-		
-		//RITUAL OBJECTS
+	}
+	
+	private function loadRitualObjects(state:FlxState) {
 		ritualObjects = new FlxTypedGroup<RitualObject>();
 		var ritualObject:RitualObject;
 		
@@ -79,10 +98,11 @@ class PentagramManager
 			var pentaChecks:Int=0;
 			while (!done) {
 				pentagram = allPentagrams.shift();
+				allPentagrams.push(pentagram);
 				pentaChecks++;
 				if (player.overlaps(pentagram) && joinRitualObjectAndPentagram(pentagram, player)) {
 					done = true;
-					pentagram.kill();
+					pentagram.Activate();
 					pentagramsCollected++;
 					FlxG.log.advanced("Pentagram removed. Pentagrams checked: " + pentaChecks);
 					
@@ -91,7 +111,6 @@ class PentagramManager
 					player.ritualObjectHold.destroy();
 					player.ritualObjectHold = null; //NO SE SI SERÍA NECESARIO, PERO POR LAS DUDAS...
 				}else {
-					allPentagrams.push(pentagram);
 					if (pentaChecks > allPentagrams.length) {
 						FlxG.log.advanced("Revise " + pentaChecks + ". No puedo borrarlo");
 						done = true;
@@ -121,8 +140,18 @@ class PentagramManager
 					
 					if (player.ritualObjectHold != null) {
 						//REVIVO EL OBJETO VIEJO; PENSADO PARA PODER LEVANTAR OBJETOS DISTINTOS PARA CIRCULOS DISTINTOS
-						player.ritualObjectHold.x = player.x;
-						player.ritualObjectHold.y = player.y;
+						var adjustmentX:Float = 0;
+						var adjustmentY:Float = 0;
+						if (player.velocity.x != 0) {
+							adjustmentX = (Math.abs(player.velocity.x) / player.velocity.x) * -1 * player.width;
+						}
+						if (player.velocity.y != 0) {
+							adjustmentY = (Math.abs(player.velocity.y) / player.velocity.y) * -1 * player.height;
+						}
+						FlxG.log.advanced("X: "+ adjustmentX+"Y: "+adjustmentY);
+						player.ritualObjectHold.x = player.x+adjustmentX;
+						player.ritualObjectHold.y = player.y+adjustmentY;
+
 						player.ritualObjectHold.revive();
 					}
 					//TOMO EL NUEVO OBJETO
@@ -137,14 +166,15 @@ class PentagramManager
 		}
 	}
 	
-	public function checkWinCondition():Bool {
-		var win:Bool=false;
+	public function checkWinCondition():Void {
+		allPentagramsActives = true;
 		
-		if (pentagrams.getFirstAlive() == null) {
-			win = true;
-			FlxG.switchState(new states.WinState());
-		}
+		pentagrams.forEach(checkAllPentagrams);
+	}
 	
-		return win;
+	private function checkAllPentagrams(pentagram:Pentagram):Void {
+		if (!pentagram.isActive) {
+			allPentagramsActives = false;
+		}
 	}
 }

@@ -113,27 +113,12 @@ class Player extends FlxSprite
 			
 		if (!moveX) {
 			velocity.x *= rozamiento;
-			//var oldVx:Float = velocity.x;
-			//
-			//if (oldVx > 0 || oldVx < 0) {
-				//velocity.add( -oldVx, 0);
-				//if ((velocity.x > 0 && oldVx < 0) || (velocity.x < 0 && oldVx > 0)) {
-					////velocity.x = 0;
-					//velocity.x *= 0.1;
-				//}
-			//}
 		}
 		if (!moveY) {
 			velocity.y *= rozamiento;
-			//var oldVy:Float = velocity.y;
-			//if (oldVy > 0 || oldVy < 0) {
-				//velocity.add(0, -oldVy);
-				//if ((velocity.y > 0 && oldVy < 0) || (velocity.y < 0 && oldVy > 0)) {
-					////velocity.y = 0;
-					//velocity.y *= 0.1;
-				//}
-			//}
+		}
+		if (!moveX && !moveY) {
+			animation.pause();
 		}
 	}
-	
 }
