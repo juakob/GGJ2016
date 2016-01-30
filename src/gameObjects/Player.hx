@@ -13,6 +13,7 @@ import flixel.util.loaders.TexturePackerData;
 class Player extends FlxSprite
 {
 	private static var maxVel:Int = 260;
+	private static var rozamiento:Float = 0.95;
 	
 	private var speedX:Float = 20;
 	private var speedY:Float = 20;
@@ -66,6 +67,7 @@ class Player extends FlxSprite
 		super.update();
 		var moveX:Bool = false;
 		var moveY:Bool = false;
+		
 		if (FlxG.keys.pressed.LEFT)
 		{
 			velocity.add( -speedX, 0);
@@ -110,23 +112,27 @@ class Player extends FlxSprite
 		}
 			
 		if (!moveX) {
-			var oldVx:Float = velocity.x;
-			
-			if (oldVx > 0 || oldVx < 0) {
-				velocity.add( -oldVx, 0);
-				if ((velocity.x > 0 && oldVx < 0) || (velocity.x < 0 && oldVx > 0)) {
-					velocity.x = 0;
-				}
-			}
+			velocity.x *= rozamiento;
+			//var oldVx:Float = velocity.x;
+			//
+			//if (oldVx > 0 || oldVx < 0) {
+				//velocity.add( -oldVx, 0);
+				//if ((velocity.x > 0 && oldVx < 0) || (velocity.x < 0 && oldVx > 0)) {
+					////velocity.x = 0;
+					//velocity.x *= 0.1;
+				//}
+			//}
 		}
 		if (!moveY) {
-			var oldVy:Float = velocity.y;
-			if (oldVy > 0 || oldVy < 0) {
-				velocity.add(0, -oldVy);
-				if ((velocity.y > 0 && oldVy < 0) || (velocity.y < 0 && oldVy > 0)) {
-					velocity.y = 0;
-				}
-			}
+			velocity.y *= rozamiento;
+			//var oldVy:Float = velocity.y;
+			//if (oldVy > 0 || oldVy < 0) {
+				//velocity.add(0, -oldVy);
+				//if ((velocity.y > 0 && oldVy < 0) || (velocity.y < 0 && oldVy > 0)) {
+					////velocity.y = 0;
+					//velocity.y *= 0.1;
+				//}
+			//}
 		}
 	}
 	

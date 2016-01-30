@@ -195,7 +195,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "8",
+			build: "16",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,
