@@ -54,6 +54,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("map/mapTest2.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
 		urls.push ("map/untitled.tmx");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -119,7 +123,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "14",
+			build: "49",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,

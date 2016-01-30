@@ -59,6 +59,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if flash
@@ -75,6 +76,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/tiles.png", AssetType.IMAGE);
 		className.set ("map/mapTest.csv", __ASSET__map_maptest_csv);
 		type.set ("map/mapTest.csv", AssetType.TEXT);
+		className.set ("map/mapTest2.csv", __ASSET__map_maptest2_csv);
+		type.set ("map/mapTest2.csv", AssetType.TEXT);
 		className.set ("map/untitled.tmx", __ASSET__map_untitled_tmx);
 		type.set ("map/untitled.tmx", AssetType.TEXT);
 		
@@ -103,6 +106,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		type.set (id, AssetType.IMAGE);
 		id = "map/mapTest.csv";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "map/mapTest2.csv";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
@@ -145,6 +152,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("map/mapTest.csv", __ASSET__map_maptest_csv);
 		type.set ("map/mapTest.csv", AssetType.TEXT);
+		
+		className.set ("map/mapTest2.csv", __ASSET__map_maptest2_csv);
+		type.set ("map/mapTest2.csv", AssetType.TEXT);
 		
 		className.set ("map/untitled.tmx", __ASSET__map_untitled_tmx);
 		type.set ("map/untitled.tmx", AssetType.TEXT);
@@ -798,6 +808,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font { }
 @:keep @:bind #if display private #end class __ASSET__img_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__map_maptest_csv extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__map_maptest2_csv extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__map_untitled_tmx extends flash.utils.ByteArray { }
 
 
@@ -807,6 +818,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font { public function new () { super (); name = "Arial"; } } 
+
 
 
 
@@ -825,6 +837,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:font("C:/HaxeToolkit/haxe/lib/flixel/3,3,12/assets/fonts/arial.ttf") #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font {}
 @:image("assets/img/tiles.png") #if display private #end class __ASSET__img_tiles_png extends lime.graphics.Image {}
 @:file("assets/map/mapTest.csv") #if display private #end class __ASSET__map_maptest_csv extends lime.utils.Bytes {}
+@:file("assets/map/mapTest2.csv") #if display private #end class __ASSET__map_maptest2_csv extends lime.utils.Bytes {}
 @:file("assets/map/untitled.tmx") #if display private #end class __ASSET__map_untitled_tmx extends lime.utils.Bytes {}
 
 
