@@ -64,7 +64,7 @@ class GameState extends FlxState
 		initAINodes(extras);
 		initPlayer();
 		initEnemies();
-		initPentagrams();
+		initPentagrams(extras);
 	}
 	
 	override public function update():Void 
@@ -111,7 +111,9 @@ class GameState extends FlxState
 		EnemyManager.instance.loadDefaultEnemyes(this);
 	}
 	
-	private function initPentagrams() {
+	private function initPentagrams(aExtra:String) {
+		PentagramManager.instance.positionsPentagrams = MapReader.detect(4, aExtra, 40);
+		PentagramManager.instance.positionsRitualObjects=MapReader.detect(5, aExtra, 40);
 		PentagramManager.instance.initPentagrams(this);
 	}
 	

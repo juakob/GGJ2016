@@ -2,10 +2,13 @@ package managers;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
+import flixel.util.FlxPoint;
 import gameObjects.Pentagram;
 import gameObjects.Player;
 import gameObjects.RitualObject;
 import helpers.Constants;
+import helpers.MapReader;
+import openfl.Assets;
 
 /**
  * ...
@@ -20,6 +23,9 @@ class PentagramManager
 	private var pentagrams:FlxTypedGroup<Pentagram>;
 	private var ritualObjects:FlxTypedGroup<RitualObject>;
 	private var tileSize:Int = Constants.TAIL_SIZE;
+	
+	public var positionsRitualObjects:Array<FlxPoint>;
+	public var positionsPentagrams:Array<FlxPoint>;
 	
 	public var allPentagramsActives(get, null):Bool;
 	private function get_allPentagramsActives():Bool {
@@ -55,18 +61,11 @@ class PentagramManager
 	private function loadPentagramObjects(state:FlxState) {
 		pentagrams = new FlxTypedGroup<Pentagram>();
 		var pentagram:Pentagram;
-		
-		pentagram = new Pentagram(5*tileSize, 2*tileSize);
-		pentagrams.add(pentagram);
-		
-		pentagram = new Pentagram(24*tileSize, 15*tileSize);
-		pentagrams.add(pentagram);
-		
-		pentagram = new Pentagram(29*tileSize, 3*tileSize);
-		pentagrams.add(pentagram);
-		
-		pentagram = new Pentagram(3*tileSize, 14*tileSize);
-		pentagrams.add(pentagram);
+		for (pos in positionsPentagrams)
+		{
+			pentagram = new Pentagram(pos.x, pos.y);
+			pentagrams.add(pentagram);
+		}
 		
 		state.add(pentagrams);
 	}
@@ -75,17 +74,11 @@ class PentagramManager
 		ritualObjects = new FlxTypedGroup<RitualObject>();
 		var ritualObject:RitualObject;
 		
-		ritualObject = new RitualObject(14 * tileSize, 8 * tileSize);
-		ritualObjects.add(ritualObject);
-		
-		ritualObject = new RitualObject(17 * tileSize, 8 * tileSize);
-		ritualObjects.add(ritualObject);
-		
-		ritualObject = new RitualObject(14 * tileSize, 11 * tileSize);
-		ritualObjects.add(ritualObject);
-		
-		ritualObject = new RitualObject(17 * tileSize, 11 * tileSize);
-		ritualObjects.add(ritualObject);
+		for (pos in positionsRitualObjects)
+		{
+			ritualObject = new RitualObject(pos.x, pos.y);
+			ritualObjects.add(ritualObject);
+		}
 		
 		state.add(ritualObjects);
 	}
