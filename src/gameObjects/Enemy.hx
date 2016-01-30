@@ -49,8 +49,6 @@ class Enemy extends FlxSprite
 		var tex1:TexturePackerData = new TexturePackerData("spritesheet/personajes.json", "spritesheet/personajes.png");
 		var frameName:String;
 		switch (type) {
-		case EnemyType.Cultist:
-			frameName = "Cultista.png";
 		case EnemyType.Farmer:
 			frameName = "Granjero.png";
 		case EnemyType.Kid:

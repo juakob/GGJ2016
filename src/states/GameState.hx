@@ -124,10 +124,7 @@ class GameState extends FlxState
 	}
 	
 	private function initEnemies() {
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Cultist, 80, 80);
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Farmer, 400, 100);
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Kid, 500, 500);
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Police, 400, 600);
+		EnemyManager.instance.loadDefaultEnemyes(this);
 	}
 	
 	public function checkPentagramsCollision() {
