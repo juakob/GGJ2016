@@ -15,9 +15,11 @@ import gameObjects.Player;
  * @author thepjteam
  */
 class EnemyManager
-{
-	
-	private var gameover:Void->Void;
+{	
+	public var gameOver(get, null):Bool;
+	public function get_gameOver():Bool {
+		return gameOver;
+	}
 	
 	public var enemies(get, null):FlxGroup;
 	private function get_enemies():FlxGroup {
@@ -54,8 +56,8 @@ class EnemyManager
 		}
 	}
 	
-	public function enemyUpdates(map:FlxTilemap, player:Player, gameover:Void->Void) {
-		this.gameover = gameover;
+	public function enemyUpdates(map:FlxTilemap, player:Player) {
+		gameOver = false;
 		FlxG.collide(enemies, map, enemyMapCollide);
 		FlxG.collide(enemies, player, enemyPlayer);
 		FlxG.collide(enemies, null, enemyEnemyCollide);
@@ -66,7 +68,7 @@ class EnemyManager
 	}
 
 	private function enemyPlayer(enemy:Enemy, player:Player):Void {
-		gameover();
+		gameOver = true;
 	}
 	
 	private function enemyEnemyCollide(enemy:Enemy, player:Enemy):Void {

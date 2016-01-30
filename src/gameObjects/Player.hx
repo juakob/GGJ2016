@@ -137,6 +137,8 @@ class Player extends FlxSprite
 		if (!moveY) {
 			velocity.y *= rozamiento;
 		}
+		if (!moveX && !moveY) {
+			animation.pause();
+		}
 	}
-	
 }

@@ -71,12 +71,11 @@ class GameState extends FlxState
 	{
 		super.update();
 		FlxG.collide(map, player);
-		
-		PentagramManager.instance.checkRitualObjectsCollision(player);
-		
-		EnemyManager.instance.enemyUpdates(map, player, gameOver);
-		PentagramManager.instance.checkPentagramsCollision(player);
-		PentagramManager.instance.checkWinCondition();
+
+		EnemyManager.instance.enemyUpdates(map, player);
+		PentagramManager.instance.pentagramUpdate(player);
+		checkGameOver();
+		checkGameWin();
 	}
 	
 	private function initMap() {
@@ -100,12 +99,23 @@ class GameState extends FlxState
 		PentagramManager.instance.initPentagrams(this);
 	}
 	
-	private function gameOver() {
-		FlxG.camera.fade(FlxColor.BLACK, .33, false, doneFadeOut);
+	private function checkGameOver() {
+		if (EnemyManager.instance.gameOver) {
+			FlxG.camera.fade(FlxColor.BLACK, .33, false, switchGameOver);
+		}
 	}
 	
-	private function doneFadeOut():Void 
-	{
+	private function switchGameOver():Void  {
 		FlxG.switchState(new GameOverState());
+	}
+	
+	private function checkGameWin() {
+		if (PentagramManager.instance.allPentagramsActives) {
+			FlxG.camera.fade(FlxColor.WHITE, .33, false, switchWin);
+		}
+	}
+	
+	private function switchWin():Void  {
+		FlxG.switchState(new states.WinState());
 	}
 }
