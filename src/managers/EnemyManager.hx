@@ -5,10 +5,12 @@ import flixel.group.FlxGroup;
 import flixel.group.FlxTypedGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
+import flixel.util.FlxPoint;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.EnemyType;
 import gameObjects.Player;
+import states.GameState;
 
 /**
  * ...
@@ -42,15 +44,22 @@ class EnemyManager
 	}
 	
 	public function loadDefaultEnemyes(game:FlxState) {
-		instance.loadEnemyes(game, 1, EnemyType.Farmer, 400, 100);
-		instance.loadEnemyes(game, 1, EnemyType.Kid, 500, 500);
-		loadEnemyes(game, 1, EnemyType.Police, 400, 600);
-	}
 
-	public function loadEnemyes(game:FlxState, cuantity:Int, type:EnemyType, x:Float, y:Float) {
+		instance.loadEnemyes(game, 1, EnemyType.Farmer);
+		instance.loadEnemyes(game, 1, EnemyType.Kid);
+		loadEnemyes(game, 1, EnemyType.Police);
+	}
+	private function randomPos():FlxPoint
+	{
+		var index = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
+		return GameState.gamestate.nodes[index].randomDestination();
+	}
+	public function loadEnemyes(game:FlxState, cuantity:Int, type:EnemyType) {
 		var enemy:Enemy;
+		var pos:FlxPoint;
 		for (i in 0...cuantity) {
-			enemy = new Enemy(x, y, type);
+			pos = randomPos();
+			enemy = new Enemy(pos.x, pos.y, type);
 			enemies.add(enemy);
 			game.add(enemy);
 		}

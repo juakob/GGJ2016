@@ -11,10 +11,12 @@ import flixel.util.FlxRandom;
 class PathNode
 {
 	
+	var point:FlxPoint;
 	public var points:Array<FlxPoint>;
-	public function new() 
+	public function new(aPoint:FlxPoint) 
 	{
 		points = new Array();
+		point = aPoint;
 	}
 	public function  addTarget(point:FlxPoint)
 	{
@@ -22,8 +24,9 @@ class PathNode
 	}
 	public function randomDestination():FlxPoint
 	{
-		var index = FlxRandom.intRanged(0, (points.length -1) );
-		return points[index];
+		//var index = FlxRandom.intRanged(0, (points.length -1) );
+		//return points[index];
+		return point;
 	}
 	
 }

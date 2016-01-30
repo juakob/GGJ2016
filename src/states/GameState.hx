@@ -6,6 +6,7 @@ import flixel.FlxObject;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
 import helpers.Constants;
+import helpers.MapReader;
 import managers.PentagramManager;
 
 import flixel.group.FlxGroup;
@@ -36,6 +37,8 @@ class GameState extends FlxState
 	public var nodes:Array<PathNode>;
 	
 	public var map:FlxTilemap;
+	public var mapAI:FlxTilemap;
+	
 	//PLAYER VARS
 	public var player:Player;
 	
@@ -49,19 +52,16 @@ class GameState extends FlxState
 	{
 		super();
 		gamestate = this;
-		nodes = new Array();
-		var node:PathNode = new PathNode();
-		node.addTarget(new FlxPoint(7*40, 40*2));
-		nodes.push(node);
-		node = new PathNode();
-		node.addTarget(new FlxPoint(27*40, 14*40));
-		nodes.push(node);
+		
 		
 	}
 	
 	override public function create():Void 
 	{
 		initMap();
+		initAIMap();
+		var extras = Assets.getText("map/level1_extras.csv");
+		initAINodes(extras);
 		initPlayer();
 		initEnemies();
 		initPentagrams();
@@ -77,12 +77,28 @@ class GameState extends FlxState
 		checkGameOver();
 		checkGameWin();
 	}
-	
+	private function initAINodes(aMap:String)
+	{
+		nodes = new Array();
+		var positions = MapReader.detect(2, aMap, tileSize);
+		for (position in positions) 
+		{
+			nodes.push(new PathNode(position));
+		}
+	}
 	private function initMap() {
 		map = new FlxTilemap();
-		map.loadMap(Assets.getText("map/mapTest2.csv"), "img/tiles.png", 40, 40);
+		map.loadMap(Assets.getText("map/level1_collision.csv"), "img/tiles.png", 40, 40);
 		map.allowCollisions = FlxObject.ANY;
 		add(map);
+	}
+	
+	private function initAIMap()
+	{
+		mapAI = new FlxTilemap();
+		mapAI.loadMap(Assets.getText("map/level1_tilesCollisionAI.csv"), "img/tiles.png", 40, 40);
+		mapAI.allowCollisions = FlxObject.ANY;
+		add(mapAI);
 	}
 	
 	private function initPlayer() {

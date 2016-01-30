@@ -25,6 +25,10 @@ class Player extends FlxSprite
 	{
 		super(X, Y);
 		loadTexture();
+		
+		width = width / 2;
+		height = height / 2;
+		offset.set(width / 2, height / 2);
 		addAnimations();
 	}
 	

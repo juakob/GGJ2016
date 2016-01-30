@@ -30,6 +30,8 @@ class Enemy extends FlxSprite
 		speedX = 100;
 		speedY = 100;
 		loadTexture();
+		x -= width / 2;
+		y -= height / 2;
 		path = new FlxPath();
 		currentNode = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
 		resetPath();
@@ -61,8 +63,9 @@ class Enemy extends FlxSprite
 	
 	private function resetPath():Void
 	{
+		
 		currentNode = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1,[currentNode]);
-			path.start(this, GameState.gamestate.map.findPath(FlxPoint.get(this.x, this.y), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
+			path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
 	}
 
 	
