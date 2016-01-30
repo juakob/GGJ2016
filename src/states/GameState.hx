@@ -8,10 +8,12 @@ import flixel.group.FlxGroup;
 import flixel.group.FlxTypedGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
+import flixel.util.FlxPoint;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.Pentagram;
 import gameObjects.Player;
+import helpers.PathNode;
 import openfl.Assets;
 
 /**
@@ -22,6 +24,8 @@ class GameState extends FlxState
 {
 	public static var gamestate:GameState;
 	private static var tileSize:Int = 40;
+	
+	public var nodes:Array<PathNode>;
 	
 	public var map:FlxTilemap;
 	//PLAYER VARS
@@ -40,6 +44,14 @@ class GameState extends FlxState
 	{
 		super();
 		gamestate = this;
+		nodes = new Array();
+		var node:PathNode = new PathNode();
+		node.addTarget(new FlxPoint(7*40, 40*2));
+		nodes.push(node);
+		node = new PathNode();
+		node.addTarget(new FlxPoint(27*40, 14*40));
+		nodes.push(node);
+		
 	}
 	
 	override public function create():Void 
@@ -60,6 +72,7 @@ class GameState extends FlxState
 		FlxG.collide(enemies, null, enemyEnemyCollide);
 		
 		
+		
 		checkPentagramsCollision();
 		checkWinCondition();
 	}
@@ -68,7 +81,7 @@ class GameState extends FlxState
 		var enemy:Enemy;
 		enemies = new FlxTypedGroup<Enemy>(amountEnemies);
 		for (i in 0...amountEnemies) {
-			enemy = new Enemy(FlxRandom.floatRanged(70, 80), FlxRandom.floatRanged(70, 80));
+			enemy = new Enemy(7*40, 40*2);
 			enemies.add(enemy);
 			add(enemy);
 		}
