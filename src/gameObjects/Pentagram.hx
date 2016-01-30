@@ -16,5 +16,8 @@ class Pentagram extends FlxSprite
 		makeGraphic(16, 16,FlxColor.RED);
 	}
 	
+	public function getType():Int {
+		return 0;
+	}
 	
 }
