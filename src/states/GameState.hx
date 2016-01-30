@@ -110,7 +110,7 @@ class GameState extends FlxState
 	
 	private function checkGameWin() {
 		if (PentagramManager.instance.allPentagramsActives) {
-			FlxG.camera.fade(FlxColor.WHITE, .33, false, switchGameOver);
+			FlxG.camera.fade(FlxColor.WHITE, .33, false, switchWin);
 		}
 	}
 	
