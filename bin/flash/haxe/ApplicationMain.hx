@@ -134,6 +134,18 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("map/level1_collision.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("map/level1_extras.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("map/level1_tilesCollisionAI.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
 		urls.push ("map/mapTest.csv");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -231,7 +243,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "31",
+			build: "17",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,
