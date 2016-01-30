@@ -4,15 +4,21 @@ import flash.desktop.Clipboard;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxState;
-import flixel.group.FlxGroup;
 import flixel.group.FlxTypedGroup;
+
+import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.Pentagram;
+import flixel.util.FlxColor;
+import flixel.util.FlxRandom;
+import gameObjects.Enemy;
+import gameObjects.EnemyType;
 import gameObjects.Player;
 import gameObjects.RitualObject;
+import managers.EnemyManager;
 import openfl.Assets;
 
 /**
@@ -38,6 +44,7 @@ class GameState extends FlxState
 	var amountEnemies:Int=1;
 	var enemies:FlxTypedGroup<Enemy>;
 	
+	
 	public function new() 
 	{
 		super();
@@ -56,11 +63,10 @@ class GameState extends FlxState
 	{
 		super.update();
 		FlxG.collide(map, player);
-		FlxG.collide(enemies, map, enemyMapCollide);
-		FlxG.collide(enemies, player, enemyPlayer);
-		FlxG.collide(enemies, null, enemyEnemyCollide);
 		
 		checkRitualObjectsCollision();
+		
+		EnemyManager.instance.enemyUpdates(map, player, gameOver);
 		checkPentagramsCollision();
 		checkWinCondition();
 	}
@@ -93,7 +99,9 @@ class GameState extends FlxState
 		}
 	}
 	
+	/*
 	private function initEnemies() {
+		
 		var enemy:Enemy;
 		enemies = new FlxTypedGroup<Enemy>(amountEnemies);
 		for (i in 0...amountEnemies) {
@@ -102,6 +110,7 @@ class GameState extends FlxState
 			add(enemy);
 		}
 	}
+	*/
 	
 	private function initMap() {
 		map = new FlxTilemap();
@@ -113,6 +122,13 @@ class GameState extends FlxState
 	private function initPlayer() {
 		player = new Player(16*tileSize, 9*tileSize);
 		add(player);
+	}
+	
+	private function initEnemies() {
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Cultist, 80, 80);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Farmer, 400, 100);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Kid, 500, 500);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Police, 400, 600);
 	}
 	
 	public function checkPentagramsCollision() {
@@ -160,7 +176,7 @@ class GameState extends FlxState
 			win = true;
 			FlxG.log.advanced("Win!");
 		}
-		
+	
 		return win;
 	}
 	
@@ -221,5 +237,6 @@ class GameState extends FlxState
 	private function doneFadeOut():Void 
 	{
 		FlxG.switchState(new GameOverState());
+		EnemyManager.instance.enemyUpdates(map, player, gameOver);
 	}
 }

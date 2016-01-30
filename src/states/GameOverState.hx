@@ -17,6 +17,7 @@ class GameOverState extends FlxState
 		super();
 		gameOverText = new FlxText((Lib.current.stage.stageWidth) / 2, (Lib.current.stage.stageHeight) / 2);
 		gameOverText.text = "GAME OVER";
+		gameOverText.color = 0xFF0000;
 	}
 	
 }
