@@ -46,6 +46,26 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.FONT);
 		
 		
+		urls.push ("img/Cultista.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Granjero.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Llorona.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/personajes.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Policia.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("img/tiles.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -56,6 +76,14 @@ class ApplicationMain {
 		
 		urls.push ("map/untitled.tmx");
 		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("spritesheet/personajes.json");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("spritesheet/personajes.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
 		
@@ -119,7 +147,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "62",
+			build: "112",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,

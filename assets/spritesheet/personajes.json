@@ -1,0 +1,48 @@
+{"frames": [
+
+{
+	"filename": "Cultista.png",
+	"frame": {"x":85,"y":1,"w":35,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":35,"h":46},
+	"sourceSize": {"w":38,"h":51},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Granjero.png",
+	"frame": {"x":1,"y":1,"w":45,"h":51},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":51},
+	"sourceSize": {"w":45,"h":53},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Llorona.png",
+	"frame": {"x":122,"y":1,"w":32,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":5,"w":32,"h":36},
+	"sourceSize": {"w":37,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Policia.png",
+	"frame": {"x":48,"y":1,"w":35,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":2,"w":35,"h":50},
+	"sourceSize": {"w":40,"h":53},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "personajes.png",
+	"format": "RGBA8888",
+	"size": {"w":155,"h":53},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:43d4575cfc6ecc30e8a15c4ff52db54e:655719ec8663f5d8485eb58829da168e:cde82ef53e88066050ba02263913feb9$"
+}
+}

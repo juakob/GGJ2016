@@ -59,6 +59,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if flash
@@ -71,12 +78,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/fonts/nokiafc22.ttf", AssetType.FONT);
 		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
 		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
+		className.set ("img/Cultista.png", __ASSET__img_cultista_png);
+		type.set ("img/Cultista.png", AssetType.IMAGE);
+		className.set ("img/Granjero.png", __ASSET__img_granjero_png);
+		type.set ("img/Granjero.png", AssetType.IMAGE);
+		className.set ("img/Llorona.png", __ASSET__img_llorona_png);
+		type.set ("img/Llorona.png", AssetType.IMAGE);
+		className.set ("img/personajes.png", __ASSET__img_personajes_png);
+		type.set ("img/personajes.png", AssetType.IMAGE);
+		className.set ("img/Policia.png", __ASSET__img_policia_png);
+		type.set ("img/Policia.png", AssetType.IMAGE);
 		className.set ("img/tiles.png", __ASSET__img_tiles_png);
 		type.set ("img/tiles.png", AssetType.IMAGE);
 		className.set ("map/mapTest.csv", __ASSET__map_maptest_csv);
 		type.set ("map/mapTest.csv", AssetType.TEXT);
 		className.set ("map/untitled.tmx", __ASSET__map_untitled_tmx);
 		type.set ("map/untitled.tmx", AssetType.TEXT);
+		className.set ("spritesheet/personajes.json", __ASSET__spritesheet_personajes_json);
+		type.set ("spritesheet/personajes.json", AssetType.TEXT);
+		className.set ("spritesheet/personajes.png", __ASSET__spritesheet_personajes_png);
+		type.set ("spritesheet/personajes.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
@@ -98,6 +119,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set (id, __ASSET__assets_fonts_arial_ttf);
 		
 		type.set (id, AssetType.FONT);
+		id = "img/Cultista.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Granjero.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Llorona.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/personajes.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "img/Policia.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "img/tiles.png";
 		path.set (id, id);
 		
@@ -110,6 +151,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "spritesheet/personajes.json";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "spritesheet/personajes.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		
 		
 		var assetsPrefix = null;
@@ -140,6 +189,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
 		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
 		
+		className.set ("img/Cultista.png", __ASSET__img_cultista_png);
+		type.set ("img/Cultista.png", AssetType.IMAGE);
+		
+		className.set ("img/Granjero.png", __ASSET__img_granjero_png);
+		type.set ("img/Granjero.png", AssetType.IMAGE);
+		
+		className.set ("img/Llorona.png", __ASSET__img_llorona_png);
+		type.set ("img/Llorona.png", AssetType.IMAGE);
+		
+		className.set ("img/personajes.png", __ASSET__img_personajes_png);
+		type.set ("img/personajes.png", AssetType.IMAGE);
+		
+		className.set ("img/Policia.png", __ASSET__img_policia_png);
+		type.set ("img/Policia.png", AssetType.IMAGE);
+		
 		className.set ("img/tiles.png", __ASSET__img_tiles_png);
 		type.set ("img/tiles.png", AssetType.IMAGE);
 		
@@ -148,6 +212,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("map/untitled.tmx", __ASSET__map_untitled_tmx);
 		type.set ("map/untitled.tmx", AssetType.TEXT);
+		
+		className.set ("spritesheet/personajes.json", __ASSET__spritesheet_personajes_json);
+		type.set ("spritesheet/personajes.json", AssetType.TEXT);
+		
+		className.set ("spritesheet/personajes.png", __ASSET__spritesheet_personajes_png);
+		type.set ("spritesheet/personajes.png", AssetType.IMAGE);
 		
 		
 		if (useManifest) {
@@ -796,9 +866,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_flixel_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends flash.text.Font { }
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font { }
+@:keep @:bind #if display private #end class __ASSET__img_cultista_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_granjero_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_llorona_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_personajes_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__img_policia_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__img_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__map_maptest_csv extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__map_untitled_tmx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__spritesheet_personajes_json extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__spritesheet_personajes_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 
 
 #elseif html5
@@ -807,6 +884,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font { public function new () { super (); name = "Arial"; } } 
+
+
+
+
+
+
+
 
 
 
@@ -823,9 +907,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:file("C:/HaxeToolkit/haxe/lib/flixel/3,3,12/assets/sounds/flixel.mp3") #if display private #end class __ASSET__assets_sounds_flixel_mp3 extends lime.utils.Bytes {}
 @:font("C:/HaxeToolkit/haxe/lib/flixel/3,3,12/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font {}
 @:font("C:/HaxeToolkit/haxe/lib/flixel/3,3,12/assets/fonts/arial.ttf") #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font {}
+@:image("assets/img/Cultista.png") #if display private #end class __ASSET__img_cultista_png extends lime.graphics.Image {}
+@:image("assets/img/Granjero.png") #if display private #end class __ASSET__img_granjero_png extends lime.graphics.Image {}
+@:image("assets/img/Llorona.png") #if display private #end class __ASSET__img_llorona_png extends lime.graphics.Image {}
+@:image("assets/img/personajes.png") #if display private #end class __ASSET__img_personajes_png extends lime.graphics.Image {}
+@:image("assets/img/Policia.png") #if display private #end class __ASSET__img_policia_png extends lime.graphics.Image {}
 @:image("assets/img/tiles.png") #if display private #end class __ASSET__img_tiles_png extends lime.graphics.Image {}
 @:file("assets/map/mapTest.csv") #if display private #end class __ASSET__map_maptest_csv extends lime.utils.Bytes {}
 @:file("assets/map/untitled.tmx") #if display private #end class __ASSET__map_untitled_tmx extends lime.utils.Bytes {}
+@:file("assets/spritesheet/personajes.json") #if display private #end class __ASSET__spritesheet_personajes_json extends lime.utils.Bytes {}
+@:image("assets/spritesheet/personajes.png") #if display private #end class __ASSET__spritesheet_personajes_png extends lime.graphics.Image {}
 
 
 

@@ -6,9 +6,12 @@ import flixel.FlxObject;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
 import flixel.tile.FlxTilemap;
+import flixel.util.FlxColor;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
+import gameObjects.EnemyType;
 import gameObjects.Player;
+import managers.EnemyManager;
 import openfl.Assets;
 
 /**
@@ -21,9 +24,6 @@ class GameState extends FlxState
 	var map:FlxTilemap;
 	var player:Player;
 	
-	var poolSize:Int;
-	var enemies:FlxTypedGroup<Enemy>;
-	
 	public function new() 
 	{
 		super();
@@ -35,36 +35,30 @@ class GameState extends FlxState
 		map.allowCollisions = FlxObject.ANY;
 		add(map);
 		
-		player = new Player(80, 80);
+		player = new Player(350, 350);
 		add(player);
-		
-		var enemy:Enemy;
-		poolSize = 4;
-		enemies = new FlxTypedGroup<Enemy>(poolSize);
-		for (i in 0...poolSize) {
-			enemy = new Enemy(FlxRandom.floatRanged(70, 80), FlxRandom.floatRanged(70, 80));
-			enemies.add(enemy);
-			add(enemy);
-		}
+
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Cultist, 80, 80);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Farmer, 400, 100);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Kid, 500, 500);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Police, 250, 600);
 	}
+	
+	
+	
 	override public function update():Void 
 	{
 		super.update();
 		FlxG.collide(map, player);
-		FlxG.collide(enemies, map, enemyMapCollide);
-		FlxG.collide(enemies, player, enemyPlayer);
-		FlxG.collide(enemies, null, enemyEnemyCollide);
+		EnemyManager.instance.enemyUpdates(map, player, gameOver);
+	}
+
+	private function gameOver():Void {
+		FlxG.camera.fade(FlxColor.BLACK, .33, false, doneFadeOut);
 	}
 	
-	private function enemyMapCollide(enemy:Enemy, map:FlxTilemap):Void {
-		enemy.changeVelocity();
+	private function doneFadeOut():Void {
+		
 	}
 	
-	private function enemyPlayer(enemy:Enemy, player:Player):Void {
-		enemy.changeVelocity();
-	}
-	
-	private function enemyEnemyCollide(enemy:Enemy, player:Enemy):Void {
-		enemy.changeVelocity();
-	}
 }
