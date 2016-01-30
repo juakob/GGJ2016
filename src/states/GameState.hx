@@ -111,19 +111,6 @@ class GameState extends FlxState
 		}
 	}
 	
-	/*
-	private function initEnemies() {
-		
-		var enemy:Enemy;
-		enemies = new FlxTypedGroup<Enemy>(amountEnemies);
-		for (i in 0...amountEnemies) {
-			enemy = new Enemy(7*40, 40*2);
-			enemies.add(enemy);
-			add(enemy);
-		}
-	}
-	*/
-	
 	private function initMap() {
 		map = new FlxTilemap();
 		map.loadMap(Assets.getText("map/mapTest2.csv"), "img/tiles.png", 40, 40);
