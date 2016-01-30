@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.0.1</string>
         <key>fileName</key>
-        <string>C:/HaxeToolkit/pacmanritual/ggj2016/TexturePacker/personajes.tps</string>
+        <string>C:/HaxeToolkit/pacmanritual/ggj2016/TexturePacker/mapObjects.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -147,12 +147,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../assets/spritesheet/personajes.json</filename>
-            </struct>
-            <key>datafile</key>
-            <struct type="DataFile">
-                <key>name</key>
-                <filename></filename>
+                <filename>../assets/spritesheet/mapObjects.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -197,17 +192,12 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../assets/img/Policia.png</filename>
-            <filename>../assets/img/Cultista.png</filename>
-            <filename>../assets/img/Granjero.png</filename>
-            <filename>../assets/img/Llorona.png</filename>
-            <filename>../assets/img/Ariel_costado3.png</filename>
-            <filename>../assets/img/Ariel_frente1.png</filename>
-            <filename>../assets/img/Ariel_frente2.png</filename>
-            <filename>../assets/img/Ariel_atras1.png</filename>
-            <filename>../assets/img/Ariel_atras2.png</filename>
-            <filename>../assets/img/Ariel_costado1.png</filename>
-            <filename>../assets/img/Ariel_costado2.png</filename>
+            <filename>../assets/img/pentagrama_sinActivar.png</filename>
+            <filename>../assets/img/cabra_2.png</filename>
+            <filename>../assets/img/cabra_3.png</filename>
+            <filename>../assets/img/pentagrama_animado1.png</filename>
+            <filename>../assets/img/pentagrama_animado2.png</filename>
+            <filename>../assets/img/cabra_4.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -44,8 +44,8 @@ class Enemy extends FlxSprite
 			resetPath();
 		}
 	}
+	
 	private function loadTexture() {
-		FlxG.log.notice(Assets.getText("spritesheet/personajes.json"));
 		var tex1:TexturePackerData = new TexturePackerData("spritesheet/personajes.json", "spritesheet/personajes.png");
 		var frameName:String;
 		switch (type) {
