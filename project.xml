@@ -23,6 +23,7 @@
 	<icon path="assets/openfl.svg" />
 	<assets path="assets/img" rename="img" />
 	<assets path="assets/map" rename="map"/>
+	<assets path="assets/spritesheet" rename="spritesheet"/>
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

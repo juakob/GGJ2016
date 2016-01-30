@@ -4,15 +4,22 @@ import flash.desktop.Clipboard;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxState;
-import flixel.group.FlxGroup;
 import flixel.group.FlxTypedGroup;
+
+import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.FlxPoint;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.Pentagram;
+import flixel.util.FlxColor;
+import flixel.util.FlxRandom;
+import gameObjects.Enemy;
+import gameObjects.EnemyType;
 import gameObjects.Player;
+import gameObjects.RitualObject;
+import managers.EnemyManager;
 import helpers.PathNode;
 import openfl.Assets;
 
@@ -35,10 +42,12 @@ class GameState extends FlxState
 	var amountOfPentagrams:Int = 4;
 	var pentagramsCollected:Int = 0;
 	var pentagrams:FlxTypedGroup<Pentagram>;
+	var ritualObjects:FlxTypedGroup<RitualObject>;
 	
 	//ENEMY VARS
 	var amountEnemies:Int=1;
 	var enemies:FlxTypedGroup<Enemy>;
+	
 	
 	public function new() 
 	{
@@ -66,18 +75,45 @@ class GameState extends FlxState
 	{
 		super.update();
 		FlxG.collide(map, player);
-		FlxG.collide(enemies, map, enemyMapCollide);
-		//FlxG.collide(enemies, map);
-		FlxG.collide(enemies, player, enemyPlayer);
-		FlxG.collide(enemies, null, enemyEnemyCollide);
 		
+		checkRitualObjectsCollision();
 		
-		
+		EnemyManager.instance.enemyUpdates(map, player, gameOver);
 		checkPentagramsCollision();
 		checkWinCondition();
 	}
 	
+	private function checkRitualObjectsCollision() {
+		if (player.overlaps(ritualObjects)) {
+			var allRitualObjects:Array<RitualObject> = ritualObjects.members;
+			var ritualObject:RitualObject;
+			var done:Bool = false;
+			
+			while (!done) {
+				ritualObject = allRitualObjects.shift();
+				if (player.overlaps(ritualObject)) {
+					
+					if (player.ritualObjectHold != null) {
+						//REVIVO EL OBJETO VIEJO; PENSADO PARA PODER LEVANTAR OBJETOS DISTINTOS PARA CIRCULOS DISTINTOS
+						player.ritualObjectHold.x = player.x;
+						player.ritualObjectHold.y = player.y;
+						player.ritualObjectHold.revive();
+					}
+					//TOMO EL NUEVO OBJETO
+					player.ritualObjectHold = ritualObject;
+					ritualObject.kill();
+					
+					done = true;
+				}
+				//SIEMPRE LO DEVOLVEMOS AL ARRAY PORQUE SE DESTRUYEN AL LLEVARLO AL CIRCULO DEL RITUAL
+				allRitualObjects.push(ritualObject);
+			}
+		}
+	}
+	
+	/*
 	private function initEnemies() {
+		
 		var enemy:Enemy;
 		enemies = new FlxTypedGroup<Enemy>(amountEnemies);
 		for (i in 0...amountEnemies) {
@@ -86,6 +122,7 @@ class GameState extends FlxState
 			add(enemy);
 		}
 	}
+	*/
 	
 	private function initMap() {
 		map = new FlxTilemap();
@@ -99,6 +136,13 @@ class GameState extends FlxState
 		add(player);
 	}
 	
+	private function initEnemies() {
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Cultist, 80, 80);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Farmer, 400, 100);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Kid, 500, 500);
+		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Police, 400, 600);
+	}
+	
 	public function checkPentagramsCollision() {
 		if (player.overlaps(pentagrams)) {
 			var allPentagrams:Array<Pentagram> = pentagrams.members;
@@ -108,15 +152,32 @@ class GameState extends FlxState
 			while (!done) {
 				pentagram = allPentagrams.shift();
 				pentaChecks++;
-				if (player.overlaps(pentagram)) {
+				if (player.overlaps(pentagram) && joinRitualObjectAndPentagram(pentagram)) {
 					done = true;
 					pentagram.kill();
 					pentagramsCollected++;
-					FlxG.log.advanced("Pentagram removed. Pentagrams checked: "+pentaChecks);
+					FlxG.log.advanced("Pentagram removed. Pentagrams checked: " + pentaChecks);
+					
+					//ME DESHAGO POR COMPLETO DEL OBJETO
+					ritualObjects.remove(player.ritualObjectHold);
+					player.ritualObjectHold.destroy();
+					player.ritualObjectHold = null; //NO SE SI SERÍA NECESARIO, PERO POR LAS DUDAS...
 				}else {
 					allPentagrams.push(pentagram);
+					if (pentaChecks > allPentagrams.length) {
+						FlxG.log.advanced("Revise " + pentaChecks + ". No puedo borrarlo");
+						done = true;
+					}
 				}
 			}
+		}
+	}
+	
+	public function joinRitualObjectAndPentagram(pentagram:Pentagram):Bool {
+		if (player.ritualObjectHold == null) {
+			return false;
+		}else {
+			return player.ritualObjectHold.getType() == pentagram.getType();
 		}
 	}
 	
@@ -127,11 +188,12 @@ class GameState extends FlxState
 			win = true;
 			FlxG.log.advanced("Win!");
 		}
-		
+	
 		return win;
 	}
 	
 	private function initPentagrams() {
+		//PENTAGRAMS
 		pentagrams = new FlxTypedGroup<Pentagram>();
 		var pentagram:Pentagram;
 		
@@ -148,6 +210,24 @@ class GameState extends FlxState
 		pentagrams.add(pentagram);
 		
 		add(pentagrams);
+		
+		//RITUAL OBJECTS
+		ritualObjects = new FlxTypedGroup<RitualObject>();
+		var ritualObject:RitualObject;
+		
+		ritualObject = new RitualObject(14 * tileSize, 8 * tileSize);
+		ritualObjects.add(ritualObject);
+		
+		ritualObject = new RitualObject(17 * tileSize, 8 * tileSize);
+		ritualObjects.add(ritualObject);
+		
+		ritualObject = new RitualObject(14 * tileSize, 11 * tileSize);
+		ritualObjects.add(ritualObject);
+		
+		ritualObject = new RitualObject(17 * tileSize, 11 * tileSize);
+		ritualObjects.add(ritualObject);
+		
+		add(ritualObjects);
 	}
 	
 	private function enemyMapCollide(enemy:Enemy, map:FlxTilemap):Void {
