@@ -156,6 +156,5 @@ class GameState extends FlxState
 	private function doneFadeOut():Void 
 	{
 		FlxG.switchState(new GameOverState());
-		EnemyManager.instance.enemyUpdates(map, player, gameOver);
 	}
 }
