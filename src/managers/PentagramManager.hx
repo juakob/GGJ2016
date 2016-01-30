@@ -140,8 +140,18 @@ class PentagramManager
 					
 					if (player.ritualObjectHold != null) {
 						//REVIVO EL OBJETO VIEJO; PENSADO PARA PODER LEVANTAR OBJETOS DISTINTOS PARA CIRCULOS DISTINTOS
-						player.ritualObjectHold.x = player.x;
-						player.ritualObjectHold.y = player.y;
+						var adjustmentX:Float = 0;
+						var adjustmentY:Float = 0;
+						if (player.velocity.x != 0) {
+							adjustmentX = (Math.abs(player.velocity.x) / player.velocity.x) * -1 * player.width;
+						}
+						if (player.velocity.y != 0) {
+							adjustmentY = (Math.abs(player.velocity.y) / player.velocity.y) * -1 * player.height;
+						}
+						FlxG.log.advanced("X: "+ adjustmentX+"Y: "+adjustmentY);
+						player.ritualObjectHold.x = player.x+adjustmentX;
+						player.ritualObjectHold.y = player.y+adjustmentY;
+
 						player.ritualObjectHold.revive();
 					}
 					//TOMO EL NUEVO OBJETO
