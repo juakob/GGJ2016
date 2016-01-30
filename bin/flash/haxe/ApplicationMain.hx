@@ -46,6 +46,34 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.FONT);
 		
 		
+		urls.push ("img/Ariel_atras1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Ariel_atras2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Ariel_costado1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Ariel_costado2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Ariel_costado3.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Ariel_frente1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/Ariel_frente2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("img/Cultista.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -79,6 +107,10 @@ class ApplicationMain {
 		
 		
 		urls.push ("map/mapTest2.csv");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("map/untitled.csv");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
@@ -155,7 +187,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "73",
+			build: "1",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,

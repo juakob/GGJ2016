@@ -9,6 +9,7 @@ import flixel.group.FlxTypedGroup;
 import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
+import flixel.util.FlxPoint;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.Pentagram;
@@ -19,6 +20,7 @@ import gameObjects.EnemyType;
 import gameObjects.Player;
 import gameObjects.RitualObject;
 import managers.EnemyManager;
+import helpers.PathNode;
 import openfl.Assets;
 
 /**
@@ -29,6 +31,8 @@ class GameState extends FlxState
 {
 	public static var gamestate:GameState;
 	private static var tileSize:Int = 40;
+	
+	public var nodes:Array<PathNode>;
 	
 	public var map:FlxTilemap;
 	//PLAYER VARS
@@ -49,6 +53,14 @@ class GameState extends FlxState
 	{
 		super();
 		gamestate = this;
+		nodes = new Array();
+		var node:PathNode = new PathNode();
+		node.addTarget(new FlxPoint(7*40, 40*2));
+		nodes.push(node);
+		node = new PathNode();
+		node.addTarget(new FlxPoint(27*40, 14*40));
+		nodes.push(node);
+		
 	}
 	
 	override public function create():Void 
@@ -108,19 +120,6 @@ class GameState extends FlxState
 		}
 	}
 	
-	/*
-	private function initEnemies() {
-		
-		var enemy:Enemy;
-		enemies = new FlxTypedGroup<Enemy>(amountEnemies);
-		for (i in 0...amountEnemies) {
-			enemy = new Enemy(FlxRandom.floatRanged(70, 80), FlxRandom.floatRanged(70, 80));
-			enemies.add(enemy);
-			add(enemy);
-		}
-	}
-	*/
-	
 	private function initMap() {
 		map = new FlxTilemap();
 		map.loadMap(Assets.getText("map/mapTest2.csv"), "img/tiles.png", 40, 40);
@@ -134,10 +133,7 @@ class GameState extends FlxState
 	}
 	
 	private function initEnemies() {
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Cultist, 80, 80);
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Farmer, 400, 100);
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Kid, 500, 500);
-		EnemyManager.instance.loadEnemyes(this, 1, EnemyType.Police, 400, 600);
+		EnemyManager.instance.loadDefaultEnemyes(this);
 	}
 	
 	public function checkPentagramsCollision() {

@@ -1,6 +1,69 @@
 {"frames": [
 
 {
+	"filename": "Ariel_atras1.png",
+	"frame": {"x":156,"y":1,"w":25,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_atras2.png",
+	"frame": {"x":122,"y":39,"w":25,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_costado1.png",
+	"frame": {"x":203,"y":28,"w":25,"h":24},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_costado2.png",
+	"frame": {"x":149,"y":39,"w":25,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_costado3.png",
+	"frame": {"x":210,"y":1,"w":25,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_frente1.png",
+	"frame": {"x":176,"y":28,"w":25,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_frente2.png",
+	"frame": {"x":183,"y":1,"w":25,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
 	"filename": "Cultista.png",
 	"frame": {"x":85,"y":1,"w":35,"h":46},
 	"rotated": false,
@@ -41,8 +104,8 @@
 	"version": "1.0",
 	"image": "personajes.png",
 	"format": "RGBA8888",
-	"size": {"w":155,"h":53},
+	"size": {"w":234,"h":63},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:43d4575cfc6ecc30e8a15c4ff52db54e:655719ec8663f5d8485eb58829da168e:cde82ef53e88066050ba02263913feb9$"
+	"smartupdate": "$TexturePacker:SmartUpdate:268c7c367f1d4286cc0e86ba79cd2fb1:d068c919954a438adff6867fdb49fb0d:cde82ef53e88066050ba02263913feb9$"
 }
 }

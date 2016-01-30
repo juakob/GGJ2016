@@ -7,6 +7,5 @@ enum EnemyType
 {
 	Police;
 	Farmer;
-	Cultist;
 	Kid;
 }

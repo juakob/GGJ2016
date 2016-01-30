@@ -38,6 +38,12 @@ class EnemyManager
 	private function new() {
 		
 	}
+	
+	public function loadDefaultEnemyes(game:FlxState) {
+		instance.loadEnemyes(game, 1, EnemyType.Farmer, 400, 100);
+		instance.loadEnemyes(game, 1, EnemyType.Kid, 500, 500);
+		loadEnemyes(game, 1, EnemyType.Police, 400, 600);
+	}
 
 	public function loadEnemyes(game:FlxState, cuantity:Int, type:EnemyType, x:Float, y:Float) {
 		var enemy:Enemy;
