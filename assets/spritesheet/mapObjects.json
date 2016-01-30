@@ -1,0 +1,66 @@
+{"frames": [
+
+{
+	"filename": "cabra_2.png",
+	"frame": {"x":1,"y":43,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "cabra_3.png",
+	"frame": {"x":24,"y":43,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "cabra_4.png",
+	"frame": {"x":1,"y":43,"w":21,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
+	"sourceSize": {"w":21,"h":18},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_animado1.png",
+	"frame": {"x":1,"y":1,"w":40,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_animado2.png",
+	"frame": {"x":43,"y":1,"w":40,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_sinActivar.png",
+	"frame": {"x":85,"y":1,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":37,"h":37},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "mapObjects.png",
+	"format": "RGBA8888",
+	"size": {"w":123,"h":62},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8b9565db1becdb411310fbc6c7cbf954:7df92d7a96c3d270f24c3ac9fcf6ff7e:72ddec9fb4368ecdbc5eef1719dec0aa$"
+}
+}

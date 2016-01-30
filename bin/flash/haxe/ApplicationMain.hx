@@ -74,6 +74,22 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("img/cabra_1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/cabra_2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/cabra_3.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/cabra_4.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("img/Cultista.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -87,6 +103,18 @@ class ApplicationMain {
 		
 		
 		urls.push ("img/Llorona.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/pentagrama_animado1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/pentagrama_animado2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("img/pentagrama_sinActivar.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -120,6 +148,14 @@ class ApplicationMain {
 		
 		urls.push ("map/untitled.tmx");
 		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("spritesheet/mapObjects.json");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("spritesheet/mapObjects.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
 		urls.push ("spritesheet/personajes.json");
@@ -195,7 +231,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "16",
+			build: "31",
 			company: "Joaquin",
 			file: "GGJ2016",
 			fps: 60,
