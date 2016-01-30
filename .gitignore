@@ -2,3 +2,6 @@
 /GGJ2016.hxproj
 bin
 /*.hxproj
+/bin/.build
+/bin/flash/bin/GGJ2016.swf
+/bin/flash/haxe/ApplicationMain.hx

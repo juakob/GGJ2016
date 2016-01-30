@@ -90,6 +90,7 @@ class GameState extends FlxState
 		map = new FlxTilemap();
 		map.loadMap(Assets.getText("map/level1_collision.csv"), "img/tiles.png", 40, 40);
 		map.allowCollisions = FlxObject.ANY;
+		map.setTileProperties(2, FlxObject.NONE);
 		add(map);
 	}
 	

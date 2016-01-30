@@ -3,8 +3,11 @@ package gameObjects;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
+import helpers.Constants;
+import states.GameState;
 
 /**
  * ...
@@ -69,6 +72,23 @@ class Player extends FlxSprite
 	override public function update():Void 
 	{
 		super.update();
+		move();
+		checkTiles();
+	}
+	
+	public function checkTiles() {
+		var tileMap:FlxTilemap = GameState.gamestate.map;
+		var posX:Int = Std.int(Std.int(this.x+this.width/2)/Constants.TAIL_SIZE);
+		var posY:Int = Std.int(Std.int(this.y+this.height/2)/Constants.TAIL_SIZE);
+		var tile:Int = tileMap.getTile(posX, posY);
+		FlxG.log.advanced("X: "+posX+" Y: "+posY);
+		if (tile == 2) {
+			this.velocity.x /= 2;
+			this.velocity.y /= 2;
+		}
+	}
+	
+	public function move() {
 		var moveX:Bool = false;
 		var moveY:Bool = false;
 		
