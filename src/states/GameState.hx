@@ -73,6 +73,12 @@ class GameState extends FlxState
 		initPlayer();
 		initEnemies();
 		initPentagrams(extras);
+		
+		initCaldero();
+	}
+	
+	public function initCaldero() {
+		var caldero:FlxSprite;
 	}
 	
 	override public function update():Void 
