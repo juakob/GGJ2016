@@ -3,6 +3,7 @@ import flixel.FlxG;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
 import flixel.util.FlxPoint;
+import flixel.util.FlxRandom;
 import gameObjects.EnemyType;
 import gameObjects.Pentagram;
 import gameObjects.Player;
@@ -24,6 +25,7 @@ class PentagramManager
 	private var pentagrams:FlxTypedGroup<Pentagram>;
 	private var ritualObjects:FlxTypedGroup<RitualObject>;
 	private var tileSize:Int = Constants.TILE_SIZE;
+	private var pentagramsBlock:Array<Int>;
 	
 	public var positionsRitualObjects:Array<FlxPoint>;
 	public var positionsPentagrams:Array<FlxPoint>;
@@ -42,7 +44,7 @@ class PentagramManager
     }
 	
 	private function new() {
-		
+		pentagramsBlock = new Array();
 	}
 	
 	public function pentagramUpdate(player:Player) {
@@ -164,6 +166,12 @@ class PentagramManager
 			}
 		}
 	}
+	public function activeRandom():Void
+	{
+		var index = FlxRandom.intRanged(0, pentagrams.members.length - 1, pentagramsBlock);
+		var pentagram = pentagrams.members[index];
+		pentagram.Activate();
+	}
 	
 	public function checkWinCondition():Void {
 		allPentagramsActives = true;
@@ -172,7 +180,7 @@ class PentagramManager
 	}
 	
 	private function checkAllPentagrams(pentagram:Pentagram):Void {
-		if (!pentagram.isActive) {
+		if (!pentagram.isLock) {
 			allPentagramsActives = false;
 		}
 	}

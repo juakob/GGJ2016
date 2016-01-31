@@ -12,12 +12,14 @@ import helpers.Constants;
 class Pentagram extends FlxSprite
 {
 	public var isActive(get, null):Bool;
+	public var isLock:Bool;
 	private function get_isActive():Bool {
 		return isActive;
 	}
 
 	public function new(X:Float=0, Y:Float=0) 
 	{
+		isLock = false;
 		//super(X, Y);
 		super(X - Constants.TILE_SIZE / 2, Y - Constants.TILE_SIZE / 2);
 		
