@@ -107,6 +107,9 @@ class PentagramManager
 					pentagramsActive.push(currentIndex);
 					trace(currentIndex);
 					
+					
+					FlxG.sound.play("sounds/spawn-enemy.mp3");
+					
 					enemyManager.loadEnemies(2, EnemyType.LitleGirl);
 					enemyManager.loadEnemies(2, EnemyType.Police);
 					enemyManager.loadEnemies(2, EnemyType.Farmer);
@@ -163,6 +166,7 @@ class PentagramManager
 						//player.ritualObjectHold.revive();
 					//}
 					//TOMO EL NUEVO OBJETO
+					FlxG.sound.play("sounds/pick.mp3");
 					player.ritualObjectHold = ritualObject;
 					//ritualObject.kill();
 					

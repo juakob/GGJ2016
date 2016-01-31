@@ -96,9 +96,10 @@ class EnemyManager
 	private function enemyPlayer(enemy:Enemy, player:Player):Void {
 		if (enemy.type == EnemyType.LitleGirl) {
 			var lg:LitleGirldEnemy = cast(enemy, LitleGirldEnemy);
-			if(lg.cry()){
-			auxCryingLitleGirl = lg;
-			enemies.forEachAlive(followCryingLiltleGirl);
+			if (lg.cry()) {
+				FlxG.sound.play("sounds/scream.mp3");
+				auxCryingLitleGirl = lg;
+				enemies.forEachAlive(followCryingLiltleGirl);
 			}
 		} else {
 			player.isCaught = true;
@@ -113,6 +114,7 @@ class EnemyManager
 				var point:FlxPoint =  new FlxPoint(auxCryingLitleGirl.x+auxCryingLitleGirl.width/2, auxCryingLitleGirl.y+auxCryingLitleGirl.height/2);
 				realEnemy.pathTo(point, 100);
 				realEnemy.followigGirl = true;
+				FlxG.sound.play("sounds/ohh.mp3");
 			}
 		}
 	}
