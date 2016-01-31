@@ -95,7 +95,7 @@ class GameState extends FlxState
 		FlxG.collide(map, player);
 		FlxG.collide(hackWall, player);
 		player.updateRitualObjectPosition();
-		//EnemyManager.instance.enemyUpdates(map, player);
+		EnemyManager.instance.enemyUpdates(map, player);
 		PentagramManager.instance.pentagramUpdate(player);
 		FlxG.collide(player, caldero);
 		checkGameOver();
@@ -110,15 +110,15 @@ class GameState extends FlxState
 			nodes.push(new PathNode(position));
 		}
 		
-		var positionsBushe = MapReader.detect(1, aMap, tileSize);
-		pastos = new FlxTypedGroup<Arbusto>();
-		var arbusto:Arbusto;
-		for (position in positions) {
-			//CREATE BUSHES
-			arbusto = new Arbusto(position.x, position.y);
-			pastos.add(arbusto);
-			//add(arbusto);
-		}
+		//var positionsBushe = MapReader.detect(1, aMap, tileSize);
+		//pastos = new FlxTypedGroup<Arbusto>();
+		//var arbusto:Arbusto;
+		//for (position in positions) {
+			////CREATE BUSHES
+			//arbusto = new Arbusto(position.x, position.y);
+			//pastos.add(arbusto);
+			////add(arbusto);
+		//}
 	}
 	private function initMap() {
 		map = new FlxTilemap();
