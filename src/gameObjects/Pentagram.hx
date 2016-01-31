@@ -3,6 +3,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
+import helpers.Constants;
 
 /**
  * ...
@@ -17,10 +18,15 @@ class Pentagram extends FlxSprite
 
 	public function new(X:Float=0, Y:Float=0) 
 	{
-		super(X, Y);
+		//super(X, Y);
+		super(X - Constants.TILE_SIZE / 2, Y - Constants.TILE_SIZE / 2);
+		
 		loadTexture();
 		addAnimations();
 		Inactive();
+		
+		this.width = Constants.TILE_SIZE;
+		this.height = Constants.TILE_SIZE;
 	}
 	
 	private function loadTexture() {

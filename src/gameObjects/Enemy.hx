@@ -19,10 +19,13 @@ class Enemy extends FlxSprite
 
 	var speedX:Float = 100;
 	var speedY:Float = 100;
-	var type:EnemyType;
+	public var type(get, null):EnemyType;
+	public function get_type():EnemyType {
+		return type;
+	}
 	private var path:FlxPath;
 	private var currentNode:Int;
-	private var direction:Int; //0 abajo, 1 arriba, 2 derecha, 3 izquierda
+	private var direction:Int; //-1 quieto, 0 abajo, 1 arriba, 2 derecha, 3 izquierda	
 	
 	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
 	{
@@ -41,12 +44,11 @@ class Enemy extends FlxSprite
 		width = width / 2;
 		height = height / 2;
 		offset.set(width / 2, height / 2);
-	}
+	}	
 	
 	override public function update():Void 
 	{
 		super.update();
-		
 		if (path.finished) {
 			resetPath();
 		} else {
@@ -89,11 +91,14 @@ class Enemy extends FlxSprite
 		loadGraphicFromTexture(tex1);
 	}
 	
-	private function resetPath():Void
-	{
-		
+	private function resetPath():Void {
 		currentNode = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1,[currentNode]);
 		path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
+	}
+	
+	public function pathTo(point:FlxPoint) {
+		path.cancel();
+		path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), point),speedX);
 	}
 
 	public function changeVelocity() {

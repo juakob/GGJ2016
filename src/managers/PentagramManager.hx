@@ -23,7 +23,7 @@ class PentagramManager
 	private var pentagramsCollected:Int = 0;
 	private var pentagrams:FlxTypedGroup<Pentagram>;
 	private var ritualObjects:FlxTypedGroup<RitualObject>;
-	private var tileSize:Int = Constants.TAIL_SIZE;
+	private var tileSize:Int = Constants.TILE_SIZE;
 	
 	public var positionsRitualObjects:Array<FlxPoint>;
 	public var positionsPentagrams:Array<FlxPoint>;
@@ -98,12 +98,12 @@ class PentagramManager
 				if (player.overlaps(pentagram) && !pentagram.isActive && joinRitualObjectAndPentagram(pentagram, player)) {
 					done = true;
 					pentagram.Activate();
-					enemyManager.loadEnemyes(2, EnemyType.LitleGirl);
-					enemyManager.loadEnemyes(2, EnemyType.Police);
-					enemyManager.loadEnemyes(2, EnemyType.Farmer);
+					enemyManager.loadEnemies(2, EnemyType.LitleGirl);
+					enemyManager.loadEnemies(2, EnemyType.Police);
+					enemyManager.loadEnemies(2, EnemyType.Farmer);
 					
 					pentagramsCollected++;
-					FlxG.log.advanced("Pentagram removed. Pentagrams checked: " + pentaChecks);
+					//FlxG.log.advanced("Pentagram removed. Pentagrams checked: " + pentaChecks);
 					
 					//ME DESHAGO POR COMPLETO DEL OBJETO
 					ritualObjects.remove(player.ritualObjectHold);
@@ -111,7 +111,7 @@ class PentagramManager
 					player.ritualObjectHold = null; //NO SE SI SERÍA NECESARIO, PERO POR LAS DUDAS...
 				}else {
 					if (pentaChecks > allPentagrams.length) {
-						FlxG.log.advanced("Revise " + pentaChecks + ". No puedo borrarlo");
+						//FlxG.log.advanced("Revise " + pentaChecks + ". No puedo borrarlo");
 						done = true;
 					}
 				}

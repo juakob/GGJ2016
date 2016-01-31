@@ -1,4 +1,5 @@
 package managers;
+import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
@@ -25,6 +26,8 @@ class EnemyManager
 		return gameOver;
 	}
 	
+	private var auxCryingLitleGirl:LitleGirldEnemy;
+	
 	public var enemies(get, null):FlxGroup;
 	private function get_enemies():FlxGroup {
         if(enemies == null) {
@@ -47,16 +50,16 @@ class EnemyManager
 	
 	public function loadDefaultEnemyes(game:FlxState) {
 
-		loadEnemyes( 2, EnemyType.Farmer);
-		loadEnemyes(2, EnemyType.LitleGirl);
-		loadEnemyes( 2, EnemyType.Police);
+		loadEnemies( 2, EnemyType.Farmer);
+		loadEnemies(2, EnemyType.LitleGirl);
+		loadEnemies( 2, EnemyType.Police);
 	}
 	private function randomPos():FlxPoint
 	{
-		var index = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
+		var index = FlxRandom.intRanged(0, GameState.gamestate.nodes.length - 1);
 		return GameState.gamestate.nodes[index].randomDestination();
 	}
-	public function loadEnemyes( cuantity:Int, type:EnemyType) {
+	public function loadEnemies( cuantity:Int, type:EnemyType) {
 		var game = GameState.gamestate;
 		var enemy:Enemy;
 		for (i in 0...cuantity) {
@@ -91,7 +94,25 @@ class EnemyManager
 	}
 
 	private function enemyPlayer(enemy:Enemy, player:Player):Void {
-		gameOver = true;
+		if (enemy.type == EnemyType.LitleGirl) {
+			var lg:LitleGirldEnemy = cast(enemy, LitleGirldEnemy);
+			lg.cry();
+			auxCryingLitleGirl = lg;
+			enemies.forEachAlive(followCryingLiltleGirl);
+		} else {
+			player.isCaught = true;
+			gameOver = true;
+		}
+	}
+	
+	private function followCryingLiltleGirl(enemy:FlxBasic):Void {
+		var realEnemy:Enemy = cast(enemy, Enemy);
+		if (realEnemy.type != EnemyType.LitleGirl) {
+			if (auxCryingLitleGirl != null) {
+				var point:FlxPoint =  new FlxPoint(auxCryingLitleGirl.x+auxCryingLitleGirl.width/2, auxCryingLitleGirl.y+auxCryingLitleGirl.height/2);
+				realEnemy.pathTo(point);
+			}
+		}
 	}
 	
 	private function enemyEnemyCollide(enemy:Enemy, player:Enemy):Void {
