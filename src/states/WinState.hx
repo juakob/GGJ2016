@@ -26,7 +26,6 @@ class WinState extends FlxState
 		image.loadGraphic("img/win.png");
 		image.setPosition(Lib.current.stage.stageWidth / 2, Lib.current.stage.stageHeight / 2);
 		add(image);
-		FlxG.sound.play("test_sound");
 	}
 	
 	public override function update() {

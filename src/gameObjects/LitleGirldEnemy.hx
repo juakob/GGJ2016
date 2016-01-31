@@ -48,6 +48,7 @@ class LitleGirldEnemy extends Enemy
 		addBackAnimation();
 		addHorizontalAnimation();
 		addCryingAnimation();
+		addHuesitosAnimation();
 	}
 	
 	private override function addFrontAnimation() {
