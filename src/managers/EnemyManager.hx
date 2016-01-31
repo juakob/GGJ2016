@@ -96,9 +96,10 @@ class EnemyManager
 	private function enemyPlayer(enemy:Enemy, player:Player):Void {
 		if (enemy.type == EnemyType.LitleGirl) {
 			var lg:LitleGirldEnemy = cast(enemy, LitleGirldEnemy);
-			lg.cry();
+			if(lg.cry()){
 			auxCryingLitleGirl = lg;
 			enemies.forEachAlive(followCryingLiltleGirl);
+			}
 		} else {
 			player.isCaught = true;
 			gameOver = true;
@@ -110,7 +111,8 @@ class EnemyManager
 		if (realEnemy.type != EnemyType.LitleGirl) {
 			if (auxCryingLitleGirl != null) {
 				var point:FlxPoint =  new FlxPoint(auxCryingLitleGirl.x+auxCryingLitleGirl.width/2, auxCryingLitleGirl.y+auxCryingLitleGirl.height/2);
-				realEnemy.pathTo(point);
+				realEnemy.pathTo(point, 100);
+				realEnemy.followigGirl = true;
 			}
 		}
 	}

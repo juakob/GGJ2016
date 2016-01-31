@@ -2,7 +2,7 @@
 
 {
 	"filename": "cabra_2.png",
-	"frame": {"x":368,"y":1,"w":21,"h":18},
+	"frame": {"x":1,"y":202,"w":21,"h":18},
 	"rotated": true,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
@@ -11,7 +11,7 @@
 },
 {
 	"filename": "cabra_3.png",
-	"frame": {"x":368,"y":24,"w":21,"h":18},
+	"frame": {"x":21,"y":202,"w":21,"h":18},
 	"rotated": true,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
@@ -20,7 +20,7 @@
 },
 {
 	"filename": "cabra_4.png",
-	"frame": {"x":368,"y":1,"w":21,"h":18},
+	"frame": {"x":1,"y":202,"w":21,"h":18},
 	"rotated": true,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":18},
@@ -47,7 +47,7 @@
 },
 {
 	"filename": "caldero_y_velitas_3.png",
-	"frame": {"x":123,"y":1,"w":59,"h":44},
+	"frame": {"x":1,"y":47,"w":59,"h":44},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":59,"h":44},
@@ -56,7 +56,7 @@
 },
 {
 	"filename": "caldero_y_velitas_4.png",
-	"frame": {"x":184,"y":1,"w":59,"h":44},
+	"frame": {"x":62,"y":47,"w":59,"h":44},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":59,"h":44},
@@ -64,30 +64,102 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "pentagrama_animado1.png",
-	"frame": {"x":245,"y":1,"w":40,"h":40},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
-	"sourceSize": {"w":40,"h":40},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "pentagrama_animado2.png",
-	"frame": {"x":287,"y":1,"w":40,"h":40},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
-	"sourceSize": {"w":40,"h":40},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "pentagrama_sinActivar.png",
-	"frame": {"x":329,"y":1,"w":37,"h":37},
+	"filename": "pentagrama_activado1.png",
+	"frame": {"x":89,"y":93,"w":36,"h":37},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":2,"w":37,"h":37},
-	"sourceSize": {"w":40,"h":40},
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":37},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_activado2.png",
+	"frame": {"x":81,"y":167,"w":36,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":36},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_activado3.png",
+	"frame": {"x":1,"y":93,"w":36,"h":42},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":42},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_activado4.png",
+	"frame": {"x":45,"y":93,"w":36,"h":42},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":42},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_desactivado.png",
+	"frame": {"x":41,"y":201,"w":36,"h":29},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":29},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_llamada.png",
+	"frame": {"x":1,"y":131,"w":38,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":34},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_llamada1.png",
+	"frame": {"x":41,"y":131,"w":38,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":33},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_llamada2.png",
+	"frame": {"x":81,"y":132,"w":38,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":33},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_llamada3.png",
+	"frame": {"x":41,"y":166,"w":38,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":33},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_llamada5.png",
+	"frame": {"x":41,"y":166,"w":38,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":33},
+	"sourceSize": {"w":70,"h":70},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "pentagrama_llamada6.png",
+	"frame": {"x":1,"y":167,"w":38,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":33},
+	"sourceSize": {"w":70,"h":70},
 	"pivot": {"x":0.5,"y":0.5}
 }],
 "meta": {
@@ -95,8 +167,8 @@
 	"version": "1.0",
 	"image": "mapObjects.png",
 	"format": "RGBA8888",
-	"size": {"w":387,"h":46},
+	"size": {"w":126,"h":231},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:17248a5290df29ac15517b34b69d7a41:bf9230ddbde543ebcf7a5d785681a774:72ddec9fb4368ecdbc5eef1719dec0aa$"
+	"smartupdate": "$TexturePacker:SmartUpdate:b2dbcd3e918763f345dcd24bad084b07:a13f9dae0fdc0bfb1a5257cb9d313ee1:72ddec9fb4368ecdbc5eef1719dec0aa$"
 }
 }

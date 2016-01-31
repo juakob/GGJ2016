@@ -23,6 +23,7 @@ class LitleGirldEnemy extends Enemy
 	
 	public override function update():Void {
 		if (crying) {
+			animation.update();
 			elapsedTime += FlxG.elapsed;
 			if (elapsedTime >= timeToStopCrying) {
 				elapsedTime = 0;
@@ -78,9 +79,14 @@ class LitleGirldEnemy extends Enemy
 		animation.addByNames("Crying", framesByName, 12);
 	}
 	
-	public function cry() {
+	public function cry():Bool {
+		if (!crying)
+		{
 		animation.play("Crying");
 		path.cancel();
 		crying = true;
+		return true;
+		}
+		return false;
 	}
 }

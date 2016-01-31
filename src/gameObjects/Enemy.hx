@@ -20,12 +20,16 @@ class Enemy extends FlxSprite
 	var speedX:Float = 100;
 	var speedY:Float = 100;
 	public var type(get, null):EnemyType;
+	
 	public function get_type():EnemyType {
 		return type;
 	}
+	
+	public var followigGirl:Bool;
 	private var path:FlxPath;
 	private var currentNode:Int;
 	private var direction:Int; //-1 quieto, 0 abajo, 1 arriba, 2 derecha, 3 izquierda	
+	private var realColor:Int;
 	
 	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
 	{
@@ -44,12 +48,21 @@ class Enemy extends FlxSprite
 		width = width / 2;
 		height = height / 2;
 		offset.set(width / 2, height / 2);
+		realColor = color;
 	}	
 	
 	override public function update():Void 
 	{
 		super.update();
+		if (type != EnemyType.LitleGirl) {
+			if (followigGirl) {
+				color = 0xff0000;
+			} else {
+				color = realColor;
+			}
+		}
 		if (path.finished) {
+			followigGirl = false;
 			resetPath();
 		} else {
 			setAnimation();
@@ -96,9 +109,9 @@ class Enemy extends FlxSprite
 		path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
 	}
 	
-	public function pathTo(point:FlxPoint) {
+	public function pathTo(point:FlxPoint, extraSpeed:Float) {
 		path.cancel();
-		path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), point),speedX);
+		path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), point), speedX + extraSpeed);
 	}
 
 	public function changeVelocity() {
