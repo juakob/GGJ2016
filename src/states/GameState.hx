@@ -70,6 +70,7 @@ class GameState extends FlxState
 	
 	override public function create():Void 
 	{
+		PentagramManager.init();
 		initMap();
 		createHackWalls();
 		initAIMap();
