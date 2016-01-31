@@ -177,8 +177,7 @@ class Player extends FlxSprite
 		}
 		if (!moveX && !moveY) {
 			animation.pause();
-			animation.
-			animation.frameIndex = 0;
+			//animation.frameIndex = 0;
 		}
 	}
 	
