@@ -50,16 +50,16 @@ class EnemyManager
 	
 	public function loadDefaultEnemyes(game:FlxState) {
 
-		loadEnemyes( 2, EnemyType.Farmer);
-		loadEnemyes(2, EnemyType.LitleGirl);
-		loadEnemyes( 2, EnemyType.Police);
+		loadEnemies( 2, EnemyType.Farmer);
+		loadEnemies(2, EnemyType.LitleGirl);
+		loadEnemies( 2, EnemyType.Police);
 	}
 	private function randomPos():FlxPoint
 	{
-		var index = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
+		var index = FlxRandom.intRanged(0, GameState.gamestate.nodes.length - 1);
 		return GameState.gamestate.nodes[index].randomDestination();
 	}
-	public function loadEnemyes( cuantity:Int, type:EnemyType) {
+	public function loadEnemies( cuantity:Int, type:EnemyType) {
 		var game = GameState.gamestate;
 		var enemy:Enemy;
 		for (i in 0...cuantity) {
@@ -100,6 +100,7 @@ class EnemyManager
 			auxCryingLitleGirl = lg;
 			enemies.forEachAlive(followCryingLiltleGirl);
 		} else {
+			player.isCaught = true;
 			gameOver = true;
 		}
 	}

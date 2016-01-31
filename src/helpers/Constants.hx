@@ -6,7 +6,7 @@ package helpers;
  */
 class Constants
 {
-	public static var TAIL_SIZE:Int = 40;
+	public static var TILE_SIZE:Int = 40;
 	
 	private function new() {
 		

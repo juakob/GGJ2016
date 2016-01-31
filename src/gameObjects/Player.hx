@@ -37,6 +37,8 @@ class Player extends FlxSprite
 	
 	private var currentFrameString:String;
 	
+	public var isCaught:Bool = false;
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		frontFrame = "Ariel_frente1.png";
@@ -128,15 +130,20 @@ class Player extends FlxSprite
 	override public function update():Void 
 	{
 		super.update();
-		move();
-		checkTiles();
-		warp();
+		if (!isCaught) {
+			move();
+			checkTiles();
+			warp();	
+		}else {
+			this.velocity.x = 0;
+			this.velocity.y = 0;
+		}
 	}
 	
 	public function checkTiles() {
 		var tileMap:FlxTilemap = GameState.gamestate.map;
-		var posX:Int = Std.int(Std.int(this.x+this.width/2)/Constants.TAIL_SIZE);
-		var posY:Int = Std.int(Std.int(this.y+this.height/2)/Constants.TAIL_SIZE);
+		var posX:Int = Std.int(Std.int(this.x+this.width/2)/Constants.TILE_SIZE);
+		var posY:Int = Std.int(Std.int(this.y+this.height/2)/Constants.TILE_SIZE);
 		var tile:Int = tileMap.getTile(posX, posY);
 		//FlxG.log.advanced("X: "+posX+" Y: "+posY);
 		if (tile == 2) {

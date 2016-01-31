@@ -3,6 +3,7 @@ package states;
 import flash.desktop.Clipboard;
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
 import helpers.Constants;
@@ -46,14 +47,12 @@ class GameState extends FlxState
 	var amountEnemies:Int=1;
 	var enemies:FlxTypedGroup<Enemy>;
 	
-	private var tileSize:Int = Constants.TAIL_SIZE;
+	private var tileSize:Int = Constants.TILE_SIZE;
 	
 	public function new() 
 	{
 		super();
-		gamestate = this;
-		
-		
+		gamestate = this;		
 	}
 	
 	override public function create():Void 
@@ -92,6 +91,10 @@ class GameState extends FlxState
 		map.allowCollisions = FlxObject.ANY;
 		map.setTileProperties(2, FlxObject.NONE);
 		add(map);
+		
+		var mapVisual:FlxSprite = new FlxSprite(0, 0);
+		mapVisual.loadGraphic("img/test_level_fondo.png");		
+		add(mapVisual);
 	}
 	
 	private function initAIMap()
