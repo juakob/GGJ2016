@@ -182,26 +182,34 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Trim</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
             <false/>
             <key>pivotPoint</key>
-            <enum type="SpriteSettings::PivotPoint">Center</enum>
+            <enum type="SpriteSettings::PivotPoint">BottomRight</enum>
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../assets/img/pentagrama_sinActivar.png</filename>
             <filename>../assets/img/cabra_2.png</filename>
             <filename>../assets/img/cabra_3.png</filename>
-            <filename>../assets/img/pentagrama_animado1.png</filename>
-            <filename>../assets/img/pentagrama_animado2.png</filename>
             <filename>../assets/img/cabra_4.png</filename>
             <filename>../assets/img/caldero_y_velitas_4.png</filename>
             <filename>../assets/img/caldero_y_velitas_1.png</filename>
             <filename>../assets/img/caldero_y_velitas_2.png</filename>
             <filename>../assets/img/caldero_y_velitas_3.png</filename>
+            <filename>../assets/img/pentagrama_llamada2.png</filename>
+            <filename>../assets/img/pentagrama_llamada1.png</filename>
+            <filename>../assets/img/pentagrama_llamada.png</filename>
+            <filename>../assets/img/pentagrama_desactivado.png</filename>
+            <filename>../assets/img/pentagrama_activado3.png</filename>
+            <filename>../assets/img/pentagrama_activado4.png</filename>
+            <filename>../assets/img/pentagrama_activado2.png</filename>
+            <filename>../assets/img/pentagrama_activado1.png</filename>
+            <filename>../assets/img/pentagrama_llamada5.png</filename>
+            <filename>../assets/img/pentagrama_llamada6.png</filename>
+            <filename>../assets/img/pentagrama_llamada3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

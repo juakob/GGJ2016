@@ -15,15 +15,23 @@ class Pentagram extends FlxSprite
 	private function get_isActive():Bool {
 		return isActive;
 	}
+	
+	public var isCalling(get, null):Bool;
+	private function get_isCalling():Bool {
+		return isCalling;
+	}
 
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		//super(X, Y);
 		super(X - Constants.TILE_SIZE / 2, Y - Constants.TILE_SIZE / 2);
 		
+		
 		loadTexture();
 		addAnimations();
-		Inactive();
+		
+		//Inactive();
+		Calling();
 		
 		this.width = Constants.TILE_SIZE;
 		this.height = Constants.TILE_SIZE;
@@ -36,29 +44,52 @@ class Pentagram extends FlxSprite
 	
 	private function addAnimations() {
 		addInactiveAnimation();
+		addCallingAnimation();
 		addActivatedAnimation();
 	}
 	
 	private function addInactiveAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
-		framesByName.push("pentagrama_sinActivar.png");
+		framesByName.push("pentagrama_desactivado.png");
 		animation.addByNames("inactive", framesByName, 12);
+	}
+	
+	private function addCallingAnimation() {
+		var framesByName:Array<String> =  new Array<String>();
+		framesByName.push("pentagrama_llamada.png");
+		framesByName.push("pentagrama_llamada1.png");
+		framesByName.push("pentagrama_llamada2.png");
+		framesByName.push("pentagrama_llamada3.png");
+		framesByName.push("pentagrama_llamada4.png");
+		framesByName.push("pentagrama_llamada5.png");
+		framesByName.push("pentagrama_llamada6.png");
+		animation.addByNames("calling", framesByName, 12);
 	}
 	
 	private function addActivatedAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
-		framesByName.push("pentagrama_animado1.png");
-		framesByName.push("pentagrama_animado2.png");
+		framesByName.push("pentagrama_activado1.png");
+		framesByName.push("pentagrama_activado2.png");
+		framesByName.push("pentagrama_activado3.png");
+		framesByName.push("pentagrama_activado4.png");
 		animation.addByNames("active", framesByName, 12);
+	}
+	
+	public function Calling() {
+		isCalling = true;
+		isActive = false;
+		animation.play("calling");
 	}
 	
 	public function Activate() {
 		isActive = true;
+		isCalling = false;
 		animation.play("active");
 	}
 	
 	public function Inactive() {
 		isActive = false;
+		isCalling = false;
 		animation.play("inactive");
 	}
 	

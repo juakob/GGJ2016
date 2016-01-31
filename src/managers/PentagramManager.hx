@@ -95,7 +95,7 @@ class PentagramManager
 				pentagram = allPentagrams.shift();
 				allPentagrams.push(pentagram);
 				pentaChecks++;
-				if (player.overlaps(pentagram) && !pentagram.isActive && joinRitualObjectAndPentagram(pentagram, player)) {
+				if (player.overlaps(pentagram) && pentagram.isCalling && joinRitualObjectAndPentagram(pentagram, player)) {
 					done = true;
 					pentagram.Activate();
 					enemyManager.loadEnemies(2, EnemyType.LitleGirl);
