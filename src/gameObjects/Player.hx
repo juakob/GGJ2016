@@ -26,10 +26,26 @@ class Player extends FlxSprite
 	
 	public var ritualObjectHold:RitualObject;
 	
-	//private var frontFrame:
+	private var frontFrame:String;
+	private var frontHandFrame:String;
+	
+	private var backFrame:String;
+	private var backHandFrame:String;
+	
+	private var verticalFrame:String;
+	private var verticalHandFrame:String;
+	
+	private var currentFrameString:String;
 	
 	public function new(X:Float=0, Y:Float=0) 
 	{
+		frontFrame = "Ariel_frente1.png";
+		frontHandFrame = "Ariel_mano_frente1.png";
+		backFrame = "Ariel_atras1.png";
+		backHandFrame = "Ariel_mano_artas1.png";
+		verticalFrame = "Ariel_costado1.png";
+		verticalHandFrame = "Ariel_mano_costado1.png";
+		
 		super(X, Y);
 		loadTexture();
 		
@@ -88,12 +104,32 @@ class Player extends FlxSprite
 		framesByName.push("Ariel_manos_costado3.png");
 		animation.addByNames("VerticalHands", framesByName, 18);
 	}
+	private function warp()
+	{
+		if (x < -10)
+		{
+			x = 1280;
+		}
+		if (x > 1290)
+		{
+			x = 0;
+		}
+		if (y < -10)
+		{
+			y = 720;
+		}
+		if (y > 730)
+		{
+			y = 0;
+		}
+	}
 	
 	override public function update():Void 
 	{
 		super.update();
 		move();
 		checkTiles();
+		warp();
 	}
 	
 	public function checkTiles() {
@@ -118,8 +154,10 @@ class Player extends FlxSprite
 			moveX = true;
 			if (ritualObjectHold != null) {
 				animation.play("VerticalHands");
+				currentFrameString = verticalHandFrame;
 			} else {
 				animation.play("Vertical");
+				currentFrameString = verticalFrame;
 			}
 			flipX = true;
 		}  
@@ -129,8 +167,10 @@ class Player extends FlxSprite
 			moveX = true;
 			if (ritualObjectHold != null) {
 				animation.play("VerticalHands");
+				currentFrameString = verticalHandFrame;
 			} else {
 				animation.play("Vertical");
+				currentFrameString = verticalFrame;
 			}
 			flipX = false;
 		} 
@@ -140,8 +180,10 @@ class Player extends FlxSprite
 			moveY = true;
 			if (ritualObjectHold != null) {
 				animation.play("BackHands");
+				currentFrameString = backHandFrame;
 			} else {
 				animation.play("Back");
+				currentFrameString = backFrame;
 			}
 			flipX = false;
 		} 
@@ -151,8 +193,10 @@ class Player extends FlxSprite
 			moveY = true;
 			if (ritualObjectHold != null) {
 				animation.play("FrontHands");
+				currentFrameString = frontHandFrame;
 			} else {
 				animation.play("Front");
+				currentFrameString = frontFrame;
 			}
 			flipX = false;
 		} 
@@ -179,7 +223,7 @@ class Player extends FlxSprite
 		}
 		if (!moveX && !moveY) {
 			animation.pause();
-			//animation.frameIndex = 0;
+			animation.frameName = currentFrameString;
 		}
 	}
 	
