@@ -99,7 +99,7 @@ class GameState extends FlxState
 		mapAI = new FlxTilemap();
 		mapAI.loadMap(Assets.getText("map/level1_tilesCollisionAI.csv"), "img/tiles.png", 40, 40);
 		mapAI.allowCollisions = FlxObject.ANY;
-		add(mapAI);
+	//	add(mapAI);
 	}
 	
 	private function initPlayer() {
