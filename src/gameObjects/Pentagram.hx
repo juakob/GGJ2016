@@ -88,6 +88,7 @@ class Pentagram extends FlxSprite
 		isCalling = false;
 		allowCollisions = FlxObject.NONE;
 		animation.play("active");
+		FlxG.sound.play("sounds/activate.mp3");
 	}
 	
 	public function Inactive() {

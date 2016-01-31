@@ -76,6 +76,7 @@ class Caldero extends FlxSprite
 	}
 	
 	public function initDemon() {
+		FlxG.sound.play("sounds/victory.mp3");
 		if (demon == null) {
 			var texturePacker:TexturePackerData = new TexturePackerData("spritesheet/demon.json", "spritesheet/demon.png");
 			demon = new FlxSprite();
