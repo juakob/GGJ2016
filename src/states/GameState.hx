@@ -60,6 +60,8 @@ class GameState extends FlxState
 	{
 		super();
 		gamestate = this;		
+		//FlxG.sound.load("sounds/backgroundMusic.mp3",1,true);
+		
 	}
 	private function createBlock(x:Float,y:Float)
 	{
@@ -71,6 +73,7 @@ class GameState extends FlxState
 	
 	override public function create():Void 
 	{
+		FlxG.sound.playMusic("sounds/backgroundMusic.mp3");
 		PentagramManager.init();
 		initMap();
 		createHackWalls();
@@ -113,11 +116,15 @@ class GameState extends FlxState
 		//var positionsBushe = MapReader.detect(1, aMap, tileSize);
 		//pastos = new FlxTypedGroup<Arbusto>();
 		//var arbusto:Arbusto;
+		//var posX:Float;
+		//var posY:Float;
 		//for (position in positions) {
 			////CREATE BUSHES
-			//arbusto = new Arbusto(position.x, position.y);
+			//posX = position.x - Constants.TILE_SIZE / 2 - Constants.TILE_SIZE;
+			//posY = position.y - Constants.TILE_SIZE / 2 - Constants.TILE_SIZE;
+			//arbusto = new Arbusto(posX, posY);
 			//pastos.add(arbusto);
-			////add(arbusto);
+			//add(arbusto);
 		//}
 	}
 	private function initMap() {
@@ -170,9 +177,12 @@ class GameState extends FlxState
 		PentagramManager.instance.initPentagrams(this);
 	}
 	
+	private var isdeath:Bool;
 	private function checkGameOver() {
-		if (EnemyManager.instance.gameOver) {
-			FlxG.camera.fade(FlxColor.BLACK, .33, false, switchGameOver);
+		if (EnemyManager.instance.gameOver && !isdeath) {
+			isdeath = true;
+			FlxG.sound.play("sounds/death.mp3");
+			FlxG.camera.fade(FlxColor.BLACK, .80, false, switchGameOver);
 		}
 	}
 	
@@ -190,9 +200,8 @@ class GameState extends FlxState
 				EnemyManager.instance.die();
 			}
 			caldero.initDemon();
-			//FlxG.camera.fade(FlxColor.WHITE, 3, false, switchWin);
 			if (FlxG.keys.pressed.ENTER) {
-				FlxG.switchState(new GameState());
+				FlxG.camera.fade(FlxColor.WHITE, 0.5, false, switchWin);
 			}
 		}
 	}

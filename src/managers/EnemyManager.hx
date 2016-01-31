@@ -107,9 +107,15 @@ class EnemyManager
 	private function enemyPlayer(enemy:Enemy, player:Player):Void {
 		if (enemy.type == EnemyType.LitleGirl) {
 			var lg:LitleGirldEnemy = cast(enemy, LitleGirldEnemy);
-			if(lg.cry()){
-			auxCryingLitleGirl = lg;
-			enemies.forEachAlive(followCryingLiltleGirl);
+			if (lg.cry()) {
+				FlxG.sound.play("sounds/scream.mp3");
+				FlxG.sound.play("sounds/ohh.mp3");
+				FlxG.sound.play("sounds/ohh.mp3");
+				FlxG.sound.play("sounds/ohh.mp3");
+				/*var timer = new haxe.Timer(1000); // 1000ms delay
+				timer.run = function() { FlxG.sound.play("sounds/ohh.mp3"); this.stop(); };*/
+				auxCryingLitleGirl = lg;
+				enemies.forEachAlive(followCryingLiltleGirl);
 			}
 		} else {
 			player.isCaught = true;

@@ -5,6 +5,7 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.input.gamepad.FlxGamepad;
 import flixel.input.gamepad.XboxButtonID;
+import flixel.system.FlxSound;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
@@ -41,6 +42,10 @@ class Player extends FlxSprite
 	
 	public var isFinish:Bool = false;
 	
+	private var isMoving:Bool;
+	
+	private var playerWalk:FlxSound;
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		frontFrame = "Ariel_frente1.png";
@@ -57,6 +62,7 @@ class Player extends FlxSprite
 		height = height / 2;
 		offset.set(width / 2, height / 2);
 		addAnimations();
+		playerWalk = FlxG.sound.load("sounds/walk2.mp3", 1, true);
 	}
 	
 	private function loadTexture() {
@@ -236,8 +242,18 @@ class Player extends FlxSprite
 			velocity.y *= rozamiento;
 		}
 		if (!moveX && !moveY) {
+			isMoving = false;
+			/*if (playerWalk.playing) {
+				playerWalk.stop();
+			}*/
 			animation.pause();
 			animation.frameName = currentFrameString;
+		} else {
+			if (!isMoving) {
+				isMoving = true;	
+				//playerWalk.play(true);
+			}
+			
 		}
 	}
 	

@@ -2,6 +2,7 @@ package gameObjects;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.util.loaders.TexturePackerData;
 import helpers.Constants;
 import states.GameState;
 
@@ -16,6 +17,7 @@ class Arbusto extends FlxSprite
 	{
 		super(X, Y);
 		initAnimations();
+		animation.play("idle");
 		width = Constants.TILES_WIDTH;
 		height = Constants.TILES_WIDTH;
 	}
@@ -25,7 +27,7 @@ class Arbusto extends FlxSprite
 		
 		if (this.overlaps(player) && animation.curAnim!=null && animation.curAnim.name != "rustle") {
 			FlxG.log.advanced("Rustling");
-			//animation.play("rustle");
+			animation.play("rustle");
 		}else if (!this.overlaps(player) && animation.curAnim!=null && animation.curAnim.name == "rustle") {
 			FlxG.log.advanced("Idle");
 			animation.play("idle");
@@ -33,16 +35,30 @@ class Arbusto extends FlxSprite
 	}
 	
 	public function initAnimations():Void {
+		var texturePacker:TexturePackerData = new TexturePackerData("spritesheet/mapObjects.json", "spritesheet/mapObjects.png");
+		this.loadGraphicFromTexture(texturePacker);
 		createAnimRustle();
 		createAnimIdle();
 	}
 	
 	public function createAnimRustle() {
-		
+		var framesByName:Array<String> =  new Array<String>();
+		framesByName.push("pasto000001.png");
+		framesByName.push("pasto000002.png");
+		framesByName.push("pasto000003.png");
+		framesByName.push("pasto000004.png");
+		framesByName.push("pasto000005.png");
+		framesByName.push("pasto000006.png");
+		framesByName.push("pasto000007.png");
+		framesByName.push("pasto000008.png");
+		framesByName.push("pasto000009.png");
+		animation.addByNames("rustle", framesByName, 12);
 	}
 	
 	public function createAnimIdle() {
-		
+		var framesByName:Array<String> =  new Array<String>();
+		framesByName.push("pasto000001.png");
+		animation.addByNames("idle", framesByName, 12);
 	}
 	
 }
