@@ -3,6 +3,8 @@ package gameObjects;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.input.gamepad.FlxGamepad;
+import flixel.input.gamepad.XboxButtonID;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
@@ -24,10 +26,26 @@ class Player extends FlxSprite
 	
 	public var ritualObjectHold:RitualObject;
 	
-	//private var frontFrame:
+	private var frontFrame:String;
+	private var frontHandFrame:String;
+	
+	private var backFrame:String;
+	private var backHandFrame:String;
+	
+	private var verticalFrame:String;
+	private var verticalHandFrame:String;
+	
+	private var currentFrameString:String;
 	
 	public function new(X:Float=0, Y:Float=0) 
 	{
+		frontFrame = "Ariel_frente1.png";
+		frontHandFrame = "Ariel_mano_frente1.png";
+		backFrame = "Ariel_atras1.png";
+		backHandFrame = "Ariel_mano_artas1.png";
+		verticalFrame = "Ariel_costado1.png";
+		verticalHandFrame = "Ariel_mano_costado1.png";
+		
 		super(X, Y);
 		loadTexture();
 		
@@ -119,7 +137,7 @@ class Player extends FlxSprite
 		var posX:Int = Std.int(Std.int(this.x+this.width/2)/Constants.TAIL_SIZE);
 		var posY:Int = Std.int(Std.int(this.y+this.height/2)/Constants.TAIL_SIZE);
 		var tile:Int = tileMap.getTile(posX, posY);
-		FlxG.log.advanced("X: "+posX+" Y: "+posY);
+		//FlxG.log.advanced("X: "+posX+" Y: "+posY);
 		if (tile == 2) {
 			this.velocity.x /= 2;
 			this.velocity.y /= 2;
@@ -130,47 +148,55 @@ class Player extends FlxSprite
 		var moveX:Bool = false;
 		var moveY:Bool = false;
 		
-		if (FlxG.keys.pressed.LEFT)
+		if (FlxG.keys.pressed.LEFT || FlxG.keys.pressed.A)
 		{
 			velocity.add( -speedX, 0);
 			moveX = true;
 			if (ritualObjectHold != null) {
 				animation.play("VerticalHands");
+				currentFrameString = verticalHandFrame;
 			} else {
 				animation.play("Vertical");
+				currentFrameString = verticalFrame;
 			}
 			flipX = true;
 		}  
-		if (FlxG.keys.pressed.RIGHT)
+		if (FlxG.keys.pressed.RIGHT||FlxG.keys.pressed.D)
 		{
 			velocity.add(speedX, 0);
 			moveX = true;
 			if (ritualObjectHold != null) {
 				animation.play("VerticalHands");
+				currentFrameString = verticalHandFrame;
 			} else {
 				animation.play("Vertical");
+				currentFrameString = verticalFrame;
 			}
 			flipX = false;
 		} 
-		if (FlxG.keys.pressed.UP)
+		if (FlxG.keys.pressed.UP|| FlxG.keys.pressed.W)
 		{
 			velocity.add(0, -speedY);
 			moveY = true;
 			if (ritualObjectHold != null) {
 				animation.play("BackHands");
+				currentFrameString = backHandFrame;
 			} else {
 				animation.play("Back");
+				currentFrameString = backFrame;
 			}
 			flipX = false;
 		} 
-		if (FlxG.keys.pressed.DOWN)
+		if (FlxG.keys.pressed.DOWN || FlxG.keys.pressed.S)
 		{
 			velocity.add(0, speedY);
 			moveY = true;
 			if (ritualObjectHold != null) {
 				animation.play("FrontHands");
+				currentFrameString = frontHandFrame;
 			} else {
 				animation.play("Front");
+				currentFrameString = frontFrame;
 			}
 			flipX = false;
 		} 
@@ -197,7 +223,7 @@ class Player extends FlxSprite
 		}
 		if (!moveX && !moveY) {
 			animation.pause();
-			//animation.frameIndex = 0;
+			animation.frameName = currentFrameString;
 		}
 	}
 	
