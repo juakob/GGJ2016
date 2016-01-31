@@ -3,6 +3,7 @@ import flixel.FlxG;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
 import flixel.util.FlxPoint;
+import gameObjects.EnemyType;
 import gameObjects.Pentagram;
 import gameObjects.Player;
 import gameObjects.RitualObject;
@@ -84,6 +85,7 @@ class PentagramManager
 	}
 
 	public function checkPentagramsCollision(player:Player) {
+		var enemyManager = EnemyManager.instance;
 		if (player.overlaps(pentagrams)) {
 			var allPentagrams:Array<Pentagram> = pentagrams.members;
 			var pentagram:Pentagram;
@@ -96,6 +98,10 @@ class PentagramManager
 				if (player.overlaps(pentagram) && joinRitualObjectAndPentagram(pentagram, player)) {
 					done = true;
 					pentagram.Activate();
+					enemyManager.loadEnemyes(2, EnemyType.Kid);
+					enemyManager.loadEnemyes(2, EnemyType.Police);
+					enemyManager.loadEnemyes(2, EnemyType.Farmer);
+					
 					pentagramsCollected++;
 					FlxG.log.advanced("Pentagram removed. Pentagrams checked: " + pentaChecks);
 					

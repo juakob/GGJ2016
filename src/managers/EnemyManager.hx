@@ -45,16 +45,17 @@ class EnemyManager
 	
 	public function loadDefaultEnemyes(game:FlxState) {
 
-		instance.loadEnemyes(game, 1, EnemyType.Farmer);
-		instance.loadEnemyes(game, 1, EnemyType.Kid);
-		loadEnemyes(game, 1, EnemyType.Police);
+		instance.loadEnemyes( 2, EnemyType.Farmer);
+		instance.loadEnemyes(2, EnemyType.Kid);
+		loadEnemyes( 2, EnemyType.Police);
 	}
 	private function randomPos():FlxPoint
 	{
 		var index = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
 		return GameState.gamestate.nodes[index].randomDestination();
 	}
-	public function loadEnemyes(game:FlxState, cuantity:Int, type:EnemyType) {
+	public function loadEnemyes( cuantity:Int, type:EnemyType) {
+		var game = GameState.gamestate;
 		var enemy:Enemy;
 		var pos:FlxPoint;
 		for (i in 0...cuantity) {
