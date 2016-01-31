@@ -32,8 +32,8 @@ class Player extends FlxSprite
 	private var backFrame:String;
 	private var backHandFrame:String;
 	
-	private var verticalFrame:String;
-	private var verticalHandFrame:String;
+	private var horizontalFrame:String;
+	private var horizontalHandFrame:String;
 	
 	private var currentFrameString:String;
 	
@@ -43,8 +43,8 @@ class Player extends FlxSprite
 		frontHandFrame = "Ariel_mano_frente1.png";
 		backFrame = "Ariel_atras1.png";
 		backHandFrame = "Ariel_mano_artas1.png";
-		verticalFrame = "Ariel_costado1.png";
-		verticalHandFrame = "Ariel_mano_costado1.png";
+		horizontalFrame = "Ariel_costado1.png";
+		horizontalHandFrame = "Ariel_mano_costado1.png";
 		
 		super(X, Y);
 		loadTexture();
@@ -64,7 +64,7 @@ class Player extends FlxSprite
 	private function addAnimations() {
 		addFrontAnimation();
 		addBackAnimation();
-		addVerticalAnimation();
+		addHorizontalAnimation();
 	}
 	
 	private function addFrontAnimation() {
@@ -91,19 +91,20 @@ class Player extends FlxSprite
 		animation.addByNames("BackHands", framesByName, 12);
 	}
 	
-	private function addVerticalAnimation() {
+	private function addHorizontalAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("Ariel_costado1.png");
 		framesByName.push("Ariel_costado2.png");
 		framesByName.push("Ariel_costado3.png");
-		animation.addByNames("Vertical", framesByName, 18);
+		animation.addByNames("Horizontal", framesByName, 18);
 		
 		framesByName =  new Array<String>();
 		framesByName.push("Ariel_manos_costado1.png");
 		framesByName.push("Ariel_manos_costado2.png");
 		framesByName.push("Ariel_manos_costado3.png");
-		animation.addByNames("VerticalHands", framesByName, 18);
+		animation.addByNames("HorizontalHands", framesByName, 18);
 	}
+	
 	private function warp()
 	{
 		if (x < -10)
@@ -153,11 +154,11 @@ class Player extends FlxSprite
 			velocity.add( -speedX, 0);
 			moveX = true;
 			if (ritualObjectHold != null) {
-				animation.play("VerticalHands");
-				currentFrameString = verticalHandFrame;
+				animation.play("HorizontalHands");
+				currentFrameString = horizontalHandFrame;
 			} else {
-				animation.play("Vertical");
-				currentFrameString = verticalFrame;
+				animation.play("Horizontal");
+				currentFrameString = horizontalFrame;
 			}
 			flipX = true;
 		}  
@@ -166,11 +167,11 @@ class Player extends FlxSprite
 			velocity.add(speedX, 0);
 			moveX = true;
 			if (ritualObjectHold != null) {
-				animation.play("VerticalHands");
-				currentFrameString = verticalHandFrame;
+				animation.play("HorizontalHands");
+				currentFrameString = horizontalHandFrame;
 			} else {
-				animation.play("Vertical");
-				currentFrameString = verticalFrame;
+				animation.play("Horizontal");
+				currentFrameString = horizontalFrame;
 			}
 			flipX = false;
 		} 
