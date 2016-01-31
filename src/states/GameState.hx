@@ -203,12 +203,8 @@ class GameState extends FlxState
 			}
 			caldero.initDemon();
 			if (FlxG.keys.pressed.ENTER) {
-				FlxG.camera.fade(FlxColor.WHITE, 0.5, false, switchWin);
+				FlxG.switchState(new GameState());
 			}
 		}
-	}
-	
-	private function switchWin():Void  {
-		FlxG.switchState(new states.WinState());
 	}
 }
