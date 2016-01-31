@@ -71,7 +71,7 @@ class GameState extends FlxState
 	{
 		super.update();
 		FlxG.collide(map, player);
-
+		player.updateRitualObjectPosition();
 		EnemyManager.instance.enemyUpdates(map, player);
 		PentagramManager.instance.pentagramUpdate(player);
 		checkGameOver();

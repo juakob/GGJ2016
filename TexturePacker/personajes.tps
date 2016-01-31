@@ -208,6 +208,13 @@
             <filename>../assets/img/Ariel_atras2.png</filename>
             <filename>../assets/img/Ariel_costado1.png</filename>
             <filename>../assets/img/Ariel_costado2.png</filename>
+            <filename>../assets/img/Ariel_manos_costado2.png</filename>
+            <filename>../assets/img/Ariel_manos_costado1.png</filename>
+            <filename>../assets/img/Ariel_manos_atras1.png</filename>
+            <filename>../assets/img/Ariel_manos_atras2.png</filename>
+            <filename>../assets/img/Ariel_manos_frente1.png</filename>
+            <filename>../assets/img/Ariel_manos_costado3.png</filename>
+            <filename>../assets/img/Ariel_manos_frente2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
