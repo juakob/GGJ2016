@@ -22,6 +22,7 @@ class Enemy extends FlxSprite
 	var type:EnemyType;
 	private var path:FlxPath;
 	private var currentNode:Int;
+	private var direction:Int; //0 abajo, 1 arriba, 2 derecha, 3 izquierda
 	
 	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
 	{
@@ -40,25 +41,43 @@ class Enemy extends FlxSprite
 	override public function update():Void 
 	{
 		super.update();
-		//velocity.add(speedX, speedY);
-		if (path.finished)
-		{
+		
+		if (path.finished) {
 			resetPath();
+		} else {
+			var newDirection:Int;
+			if (velocity.x > 0) {
+				newDirection = 2;
+			} else if (velocity.x < 0) {
+				newDirection = 3;
+			} else if (velocity.y > 0) {
+				newDirection = 0;
+			} else {
+				newDirection = 1;
+			}
+			if (newDirection != direction) {
+				direction = newDirection;
+				switch(direction) {
+					case 0:
+						animation.play("Front");
+						flipX = false;
+					case 1:
+						animation.play("Back");
+						flipX = false;
+					case 2:
+						animation.play("Horizontal");
+						flipX = flase;
+					case 3:
+						animation.play("Horizontal");
+						flipX = true;
+				}
+			}
 		}
 	}
 	
 	private function loadTexture() {
 		var tex1:TexturePackerData = new TexturePackerData("spritesheet/personajes.json", "spritesheet/personajes.png");
-		var frameName:String;
-		switch (type) {
-		case EnemyType.Farmer:
-			frameName = "Granjero.png";
-		case EnemyType.Kid:
-			frameName = "Llorona.png";
-		case EnemyType.Police:
-			frameName = "Policia.png";
-		}
-		loadGraphicFromTexture(tex1, false, frameName);
+		loadGraphicFromTexture(tex1);
 	}
 	
 	private function resetPath():Void
@@ -68,9 +87,6 @@ class Enemy extends FlxSprite
 			path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
 	}
 
-	
-	
-	
 	public function changeVelocity() {
 		speedX = FlxRandom.floatRanged(-5, 5);
 		speedY = FlxRandom.floatRanged( -5, 5);

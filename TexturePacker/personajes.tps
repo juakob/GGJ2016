@@ -215,6 +215,23 @@
             <filename>../assets/img/Ariel_manos_frente1.png</filename>
             <filename>../assets/img/Ariel_manos_costado3.png</filename>
             <filename>../assets/img/Ariel_manos_frente2.png</filename>
+            <filename>../assets/img/policia_atrás5.png</filename>
+            <filename>../assets/img/policia_atrás4.png</filename>
+            <filename>../assets/img/policia_atrás3.png</filename>
+            <filename>../assets/img/policia_atrás2.png</filename>
+            <filename>../assets/img/policia_atrás1.png</filename>
+            <filename>../assets/img/policia_frente5.png</filename>
+            <filename>../assets/img/policia_frente3.png</filename>
+            <filename>../assets/img/policia_frente4.png</filename>
+            <filename>../assets/img/policia_frente2.png</filename>
+            <filename>../assets/img/policia_costado_6.png</filename>
+            <filename>../assets/img/policia_frente1.png</filename>
+            <filename>../assets/img/policia_costado_5.png</filename>
+            <filename>../assets/img/policia_costado_4.png</filename>
+            <filename>../assets/img/policia_costado_3.png</filename>
+            <filename>../assets/img/policia_costado_2.png</filename>
+            <filename>../assets/img/policia_costado_1.png</filename>
+            <filename>../assets/img/policia_atrás6.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
