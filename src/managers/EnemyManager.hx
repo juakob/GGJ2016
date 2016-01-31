@@ -106,7 +106,7 @@ class EnemyManager
 	
 	private function followCryingLiltleGirl(enemy:FlxBasic):Void {
 		var realEnemy:Enemy = cast(enemy, Enemy);
-		if (realEnemy.type != LitleGirldEnemy) {
+		if (realEnemy.type != EnemyType.LitleGirl) {
 			if (auxCryingLitleGirl != null) {
 				var point:FlxPoint =  new FlxPoint(auxCryingLitleGirl.x+auxCryingLitleGirl.width/2, auxCryingLitleGirl.y+auxCryingLitleGirl.height/2);
 				realEnemy.pathTo(point);
