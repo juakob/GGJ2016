@@ -39,6 +39,7 @@ class Caldero extends FlxSprite
 		}
 		if (demon != null && demon.animation.get("spawning").finished) {
 			demon.animation.play("idle");
+			GameState.gamestate.add(new FlxSprite(250, 450, "img/play_again.png"));
 		}
 	}
 	

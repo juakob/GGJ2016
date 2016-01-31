@@ -184,6 +184,9 @@ class GameState extends FlxState
 		if (PentagramManager.instance.allPentagramsActives) {
 			caldero.initDemon();
 			//FlxG.camera.fade(FlxColor.WHITE, 3, false, switchWin);
+			if (FlxG.keys.pressed.ENTER) {
+				FlxG.switchState(new GameState());
+			}
 		}
 	}
 	
