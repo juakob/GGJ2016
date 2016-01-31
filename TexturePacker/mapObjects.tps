@@ -198,6 +198,10 @@
             <filename>../assets/img/pentagrama_animado1.png</filename>
             <filename>../assets/img/pentagrama_animado2.png</filename>
             <filename>../assets/img/cabra_4.png</filename>
+            <filename>../assets/img/caldero_y_velitas_4.png</filename>
+            <filename>../assets/img/caldero_y_velitas_1.png</filename>
+            <filename>../assets/img/caldero_y_velitas_2.png</filename>
+            <filename>../assets/img/caldero_y_velitas_3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
