@@ -3,6 +3,8 @@ package gameObjects;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.input.gamepad.FlxGamepad;
+import flixel.input.gamepad.XboxButtonID;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
@@ -99,7 +101,7 @@ class Player extends FlxSprite
 		var posX:Int = Std.int(Std.int(this.x+this.width/2)/Constants.TAIL_SIZE);
 		var posY:Int = Std.int(Std.int(this.y+this.height/2)/Constants.TAIL_SIZE);
 		var tile:Int = tileMap.getTile(posX, posY);
-		FlxG.log.advanced("X: "+posX+" Y: "+posY);
+		//FlxG.log.advanced("X: "+posX+" Y: "+posY);
 		if (tile == 2) {
 			this.velocity.x /= 2;
 			this.velocity.y /= 2;
@@ -110,7 +112,7 @@ class Player extends FlxSprite
 		var moveX:Bool = false;
 		var moveY:Bool = false;
 		
-		if (FlxG.keys.pressed.LEFT)
+		if (FlxG.keys.pressed.LEFT || FlxG.keys.pressed.A)
 		{
 			velocity.add( -speedX, 0);
 			moveX = true;
@@ -121,7 +123,7 @@ class Player extends FlxSprite
 			}
 			flipX = true;
 		}  
-		if (FlxG.keys.pressed.RIGHT)
+		if (FlxG.keys.pressed.RIGHT||FlxG.keys.pressed.D)
 		{
 			velocity.add(speedX, 0);
 			moveX = true;
@@ -132,7 +134,7 @@ class Player extends FlxSprite
 			}
 			flipX = false;
 		} 
-		if (FlxG.keys.pressed.UP)
+		if (FlxG.keys.pressed.UP|| FlxG.keys.pressed.W)
 		{
 			velocity.add(0, -speedY);
 			moveY = true;
@@ -143,7 +145,7 @@ class Player extends FlxSprite
 			}
 			flipX = false;
 		} 
-		if (FlxG.keys.pressed.DOWN)
+		if (FlxG.keys.pressed.DOWN || FlxG.keys.pressed.S)
 		{
 			velocity.add(0, speedY);
 			moveY = true;
