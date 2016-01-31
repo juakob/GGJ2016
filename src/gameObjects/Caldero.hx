@@ -38,6 +38,7 @@ class Caldero extends FlxSprite
 	}
 	
 	override public function update():Void {
+		super.update();
 		if (demon==null && FlxG.keys.pressed.X) {
 			initDemon();
 		}
