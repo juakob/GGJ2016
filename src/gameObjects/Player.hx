@@ -39,7 +39,7 @@ class Player extends FlxSprite
 	
 	public var isCaught:Bool = false;
 	
-	public var isFinish:Bool = true;
+	public var isFinish:Bool = false;
 	
 	public function new(X:Float=0, Y:Float=0) 
 	{
