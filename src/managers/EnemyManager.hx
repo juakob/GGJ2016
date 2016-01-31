@@ -68,7 +68,7 @@ class EnemyManager
 	
 	public function enemyUpdates(map:FlxTilemap, player:Player) {
 		gameOver = false;
-		FlxG.collide(enemies, map, enemyMapCollide);
+		//FlxG.collide(enemies, map, enemyMapCollide);
 		FlxG.overlap(enemies, player, enemyPlayer);
 		FlxG.collide(enemies, null, enemyEnemyCollide);
 	}
