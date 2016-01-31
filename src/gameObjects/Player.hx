@@ -102,12 +102,32 @@ class Player extends FlxSprite
 		framesByName.push("Ariel_manos_costado3.png");
 		animation.addByNames("VerticalHands", framesByName, 18);
 	}
+	private function warp()
+	{
+		if (x < -10)
+		{
+			x = 1280;
+		}
+		if (x > 1290)
+		{
+			x = 0;
+		}
+		if (y < -10)
+		{
+			y = 720;
+		}
+		if (y > 730)
+		{
+			y = 0;
+		}
+	}
 	
 	override public function update():Void 
 	{
 		super.update();
 		move();
 		checkTiles();
+		warp();
 	}
 	
 	public function checkTiles() {
