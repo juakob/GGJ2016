@@ -39,6 +39,8 @@ class Player extends FlxSprite
 	
 	public var isCaught:Bool = false;
 	
+	public var isFinish:Bool = false;
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		frontFrame = "Ariel_frente1.png";
@@ -129,6 +131,10 @@ class Player extends FlxSprite
 	
 	override public function update():Void 
 	{
+		if (isFinish)
+		{
+			return;
+		}
 		super.update();
 		if (!isCaught) {
 			move();

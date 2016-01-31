@@ -42,6 +42,7 @@ class Enemy extends FlxSprite
 		speedX = 100;
 		speedY = 100;
 		loadTexture();
+		addDeath();
 		x -= width / 2;
 		y -= height / 2;
 		path = new FlxPath();
@@ -121,6 +122,17 @@ class Enemy extends FlxSprite
 					flipX = true;
 			}
 		}
+	}
+	public function die()
+	{
+		path.cancel();
+		//animation.play("Death");
+	}
+	private  function addDeath() {
+		var framesByName:Array<String> =  new Array<String>();
+		framesByName.push("nena_frente1.png");
+		framesByName.push("nena_frente2.png");
+		animation.addByNames("Death", framesByName, 12);
 	}
 	
 	private function loadTexture() {
