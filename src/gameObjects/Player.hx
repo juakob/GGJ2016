@@ -106,19 +106,19 @@ class Player extends FlxSprite
 	}
 	private function warp()
 	{
-		if (x < -10)
+		if (x < -5)
 		{
 			x = 1280;
 		}
-		if (x > 1290)
+		if (x > 1285)
 		{
 			x = 0;
 		}
-		if (y < -10)
+		if (y < -5)
 		{
 			y = 720;
 		}
-		if (y > 730)
+		if (y > 725)
 		{
 			y = 0;
 		}
