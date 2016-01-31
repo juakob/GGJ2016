@@ -53,7 +53,7 @@ class GameState extends FlxState
 	private var tileSize:Int = Constants.TILE_SIZE;
 	
 	//EXTRAS
-	var caldero:FlxSprite;
+	var caldero:Caldero;
 	
 	public function new() 
 	{
@@ -93,7 +93,7 @@ class GameState extends FlxState
 		FlxG.collide(map, player);
 		FlxG.collide(hackWall, player);
 		player.updateRitualObjectPosition();
-		EnemyManager.instance.enemyUpdates(map, player);
+		//EnemyManager.instance.enemyUpdates(map, player);
 		PentagramManager.instance.pentagramUpdate(player);
 		FlxG.collide(player, caldero);
 		checkGameOver();
@@ -170,7 +170,8 @@ class GameState extends FlxState
 	
 	private function checkGameWin() {
 		if (PentagramManager.instance.allPentagramsActives) {
-			FlxG.camera.fade(FlxColor.WHITE, .33, false, switchWin);
+			caldero.initDemon();
+			//FlxG.camera.fade(FlxColor.WHITE, 3, false, switchWin);
 		}
 	}
 	
