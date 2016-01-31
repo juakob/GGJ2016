@@ -23,14 +23,16 @@ class GameOverState extends FlxState
 	public override function create() {
 		super.create();
 		var image = new FlxSprite();
-		image.loadGraphic("img/gameover.png");
-		image.setPosition(Lib.current.stage.stageWidth / 2, Lib.current.stage.stageHeight / 2);
+		image.loadGraphic("img/game_over.png");
+		image.setPosition(0,0);
+		//image.loadGraphic("img/gameover.png");
+		//image.setPosition(Lib.current.stage.stageWidth / 2, Lib.current.stage.stageHeight / 2);
 		add(image);
 	}
 	
 	public override function update() {
 		super.update();
-		if (FlxG.keys.pressed.SPACE)  {
+		if (FlxG.keys.pressed.ENTER)  {
 			FlxG.switchState(new GameState());
 		}
 	}
