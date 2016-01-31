@@ -1,0 +1,273 @@
+{"frames": [
+
+{
+	"filename": "demonAnimation.png",
+	"frame": {"x":1,"y":1,"w":8,"h":264},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":96,"y":86,"w":8,"h":264},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0001.png",
+	"frame": {"x":1,"y":1,"w":8,"h":264},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":96,"y":86,"w":8,"h":264},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0002.png",
+	"frame": {"x":1769,"y":228,"w":58,"h":215},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":71,"y":127,"w":58,"h":215},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0003.png",
+	"frame": {"x":301,"y":253,"w":106,"h":234},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":47,"y":100,"w":106,"h":234},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0004.png",
+	"frame": {"x":203,"y":253,"w":96,"h":237},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":52,"y":100,"w":96,"h":237},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0005.png",
+	"frame": {"x":1,"y":267,"w":200,"h":227},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":114,"w":200,"h":227},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0006.png",
+	"frame": {"x":1567,"y":251,"w":200,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":114,"w":200,"h":225},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0007.png",
+	"frame": {"x":1099,"y":252,"w":147,"h":247},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":26,"y":91,"w":147,"h":247},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0008.png",
+	"frame": {"x":1248,"y":252,"w":147,"h":247},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":26,"y":91,"w":147,"h":247},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0009.png",
+	"frame": {"x":755,"y":252,"w":170,"h":247},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":91,"w":170,"h":247},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0010.png",
+	"frame": {"x":927,"y":252,"w":170,"h":247},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":91,"w":170,"h":247},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0011.png",
+	"frame": {"x":1397,"y":251,"w":168,"h":248},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":90,"w":168,"h":248},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0012.png",
+	"frame": {"x":1556,"y":1,"w":168,"h":248},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":90,"w":168,"h":248},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0013.png",
+	"frame": {"x":1385,"y":1,"w":169,"h":248},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":90,"w":169,"h":248},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0014.png",
+	"frame": {"x":701,"y":1,"w":169,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":89,"w":169,"h":249},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0015.png",
+	"frame": {"x":872,"y":1,"w":169,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":89,"w":169,"h":249},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0016.png",
+	"frame": {"x":1043,"y":1,"w":169,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":89,"w":169,"h":249},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0017.png",
+	"frame": {"x":1214,"y":1,"w":169,"h":249},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":89,"w":169,"h":249},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0018.png",
+	"frame": {"x":530,"y":1,"w":169,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":88,"w":169,"h":250},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0019.png",
+	"frame": {"x":11,"y":1,"w":171,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":88,"w":171,"h":250},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0020.png",
+	"frame": {"x":184,"y":1,"w":171,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":88,"w":171,"h":250},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0021.png",
+	"frame": {"x":357,"y":1,"w":171,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":88,"w":171,"h":250},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0022.png",
+	"frame": {"x":409,"y":253,"w":171,"h":226},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":88,"w":171,"h":226},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0023.png",
+	"frame": {"x":582,"y":253,"w":171,"h":226},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":88,"w":171,"h":226},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0024.png",
+	"frame": {"x":1726,"y":1,"w":170,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":88,"w":170,"h":225},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0025.png",
+	"frame": {"x":1726,"y":1,"w":170,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":88,"w":170,"h":225},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0026.png",
+	"frame": {"x":1726,"y":1,"w":170,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":88,"w":170,"h":225},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0027.png",
+	"frame": {"x":1726,"y":1,"w":170,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":88,"w":170,"h":225},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "demonAnimation0028.png",
+	"frame": {"x":1726,"y":1,"w":170,"h":225},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":88,"w":170,"h":225},
+	"sourceSize": {"w":200,"h":400},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "demon.png",
+	"format": "RGBA8888",
+	"size": {"w":1903,"h":500},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:afbb88ce8211a20ff3f2e748874ec1eb:52a3aad38190a156081f695afd0df069:77480cee959c6322d08091b7933ffad5$"
+}
+}
