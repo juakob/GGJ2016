@@ -63,6 +63,7 @@ class Caldero extends FlxSprite
 	
 	public function initDemon() {
 		if (demon == null) {
+			
 			var texturePacker:TexturePackerData = new TexturePackerData("spritesheet/demon.json", "spritesheet/demon.png");
 			demon = new FlxSprite();
 			demon.loadGraphicFromTexture(texturePacker);

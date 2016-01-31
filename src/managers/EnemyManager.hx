@@ -89,6 +89,17 @@ class EnemyManager
 		FlxG.collide(enemies, null, enemyEnemyCollide);
 	}
 	
+	public function die() 
+	{
+		enemies.forEachAlive(dieAll);
+	}
+	
+	function dieAll(enemy:FlxBasic):Void 
+	{
+		var realEnemy:Enemy = cast(enemy, Enemy);
+		realEnemy.die();
+	}
+	
 	private function enemyMapCollide(enemy:Enemy, map:FlxTilemap):Void {
 		enemy.changeVelocity();
 	}

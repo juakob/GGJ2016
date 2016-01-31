@@ -31,6 +31,8 @@ class Enemy extends FlxSprite
 	private var direction:Int; //-1 quieto, 0 abajo, 1 arriba, 2 derecha, 3 izquierda	
 	private var realColor:Int;
 	
+	private var dead:Bool;
+	
 	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
 	{
 		super(X, Y);
@@ -78,6 +80,11 @@ class Enemy extends FlxSprite
 	
 	override public function update():Void 
 	{
+		if (dead)
+		{
+			animation.update();
+			return;
+		}
 		super.update();
 		if (type != EnemyType.LitleGirl) {
 			if (followigGirl) {
@@ -125,6 +132,7 @@ class Enemy extends FlxSprite
 	}
 	public function die()
 	{
+		dead = true;
 		path.cancel();
 		//animation.play("Death");
 	}

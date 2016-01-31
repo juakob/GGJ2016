@@ -24,6 +24,11 @@ class LitleGirldEnemy extends Enemy
 	}
 	
 	public override function update():Void {
+		if (dead)
+		{
+			animation.update();
+			return;
+		}
 		if (crying) {
 			animation.update();
 			elapsedTime += FlxG.elapsed;
