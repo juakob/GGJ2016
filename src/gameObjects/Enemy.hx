@@ -44,7 +44,6 @@ class Enemy extends FlxSprite
 		speedX = 100;
 		speedY = 100;
 		loadTexture();
-		addDeath();
 		x -= width / 2;
 		y -= height / 2;
 		path = new FlxPath();
@@ -61,6 +60,7 @@ class Enemy extends FlxSprite
 		addFrontAnimation();
 		addBackAnimation();
 		addHorizontalAnimation();
+		addHuesitosAnimation();
 	}
 	
 	private function addFrontAnimation() {
@@ -75,7 +75,16 @@ class Enemy extends FlxSprite
 	
 	private function addHorizontalAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
-		animation.addByNames("Horizontal", framesByName, 12);
+		framesByName.push("huesitos_1.png");
+		framesByName.push("huesitos_2.png");
+		framesByName.push("huesitos_3.png");
+		framesByName.push("huesitos_4.png");
+		framesByName.push("huesitos_5.png");
+		animation.addByNames("Huesitos", framesByName, 12);
+	}
+	
+	private function addHuesitosAnimation() {
+		
 	}
 	
 	override public function update():Void 
@@ -134,13 +143,7 @@ class Enemy extends FlxSprite
 	{
 		dead = true;
 		path.cancel();
-		//animation.play("Death");
-	}
-	private  function addDeath() {
-		var framesByName:Array<String> =  new Array<String>();
-		framesByName.push("nena_frente1.png");
-		framesByName.push("nena_frente2.png");
-		animation.addByNames("Death", framesByName, 12);
+		animation.play("Huesitos");
 	}
 	
 	private function loadTexture() {
