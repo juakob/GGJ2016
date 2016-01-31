@@ -24,6 +24,8 @@ class Player extends FlxSprite
 	
 	public var ritualObjectHold:RitualObject;
 	
+	//private var frontFrame:
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		super(X, Y);
@@ -52,6 +54,11 @@ class Player extends FlxSprite
 		framesByName.push("Ariel_frente1.png");
 		framesByName.push("Ariel_frente2.png");
 		animation.addByNames("Front", framesByName, 12);
+		
+		framesByName =  new Array<String>();
+		framesByName.push("Ariel_manos_frente1.png");
+		framesByName.push("Ariel_manos_frente2.png");
+		animation.addByNames("FrontHands", framesByName, 12);
 	}
 	
 	private function addBackAnimation() {
@@ -59,6 +66,11 @@ class Player extends FlxSprite
 		framesByName.push("Ariel_atras1.png");
 		framesByName.push("Ariel_atras2.png");
 		animation.addByNames("Back", framesByName, 12);
+		
+		framesByName =  new Array<String>();
+		framesByName.push("Ariel_manos_atras1.png");
+		framesByName.push("Ariel_manos_atras2.png");
+		animation.addByNames("BackHands", framesByName, 12);
 	}
 	
 	private function addVerticalAnimation() {
@@ -67,6 +79,12 @@ class Player extends FlxSprite
 		framesByName.push("Ariel_costado2.png");
 		framesByName.push("Ariel_costado3.png");
 		animation.addByNames("Vertical", framesByName, 18);
+		
+		framesByName =  new Array<String>();
+		framesByName.push("Ariel_manos_costado1.png");
+		framesByName.push("Ariel_manos_costado2.png");
+		framesByName.push("Ariel_manos_costado3.png");
+		animation.addByNames("VerticalHands", framesByName, 18);
 	}
 	
 	override public function update():Void 
@@ -96,28 +114,44 @@ class Player extends FlxSprite
 		{
 			velocity.add( -speedX, 0);
 			moveX = true;
-			animation.play("Vertical");
+			if (ritualObjectHold != null) {
+				animation.play("VerticalHands");
+			} else {
+				animation.play("Vertical");
+			}
 			flipX = true;
 		}  
 		if (FlxG.keys.pressed.RIGHT)
 		{
 			velocity.add(speedX, 0);
 			moveX = true;
-			animation.play("Vertical");
+			if (ritualObjectHold != null) {
+				animation.play("VerticalHands");
+			} else {
+				animation.play("Vertical");
+			}
 			flipX = false;
 		} 
 		if (FlxG.keys.pressed.UP)
 		{
 			velocity.add(0, -speedY);
 			moveY = true;
-			animation.play("Back");
+			if (ritualObjectHold != null) {
+				animation.play("BackHands");
+			} else {
+				animation.play("Back");
+			}
 			flipX = false;
 		} 
 		if (FlxG.keys.pressed.DOWN)
 		{
 			velocity.add(0, speedY);
 			moveY = true;
-			animation.play("Front");
+			if (ritualObjectHold != null) {
+				animation.play("FrontHands");
+			} else {
+				animation.play("Front");
+			}
 			flipX = false;
 		} 
 		if (velocity.x > maxVel) {
@@ -143,6 +177,15 @@ class Player extends FlxSprite
 		}
 		if (!moveX && !moveY) {
 			animation.pause();
+			animation.
+			animation.frameIndex = 0;
+		}
+	}
+	
+	public function updateRitualObjectPosition() {
+		if (ritualObjectHold != null) {
+			ritualObjectHold.x = x;
+			ritualObjectHold.y = y - ritualObjectHold.height;
 		}
 	}
 }

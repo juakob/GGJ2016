@@ -2,7 +2,7 @@
 
 {
 	"filename": "Ariel_atras1.png",
-	"frame": {"x":156,"y":1,"w":25,"h":25},
+	"frame": {"x":34,"y":220,"w":25,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
@@ -11,8 +11,8 @@
 },
 {
 	"filename": "Ariel_atras2.png",
-	"frame": {"x":122,"y":39,"w":25,"h":23},
-	"rotated": false,
+	"frame": {"x":38,"y":81,"w":25,"h":23},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
 	"sourceSize": {"w":40,"h":40},
@@ -20,8 +20,8 @@
 },
 {
 	"filename": "Ariel_costado1.png",
-	"frame": {"x":203,"y":28,"w":25,"h":24},
-	"rotated": false,
+	"frame": {"x":38,"y":54,"w":25,"h":24},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
 	"sourceSize": {"w":40,"h":40},
@@ -29,8 +29,8 @@
 },
 {
 	"filename": "Ariel_costado2.png",
-	"frame": {"x":149,"y":39,"w":25,"h":23},
-	"rotated": false,
+	"frame": {"x":38,"y":108,"w":25,"h":23},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
 	"sourceSize": {"w":40,"h":40},
@@ -38,7 +38,7 @@
 },
 {
 	"filename": "Ariel_costado3.png",
-	"frame": {"x":210,"y":1,"w":25,"h":23},
+	"frame": {"x":32,"y":275,"w":25,"h":23},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
@@ -47,7 +47,7 @@
 },
 {
 	"filename": "Ariel_frente1.png",
-	"frame": {"x":176,"y":28,"w":25,"h":25},
+	"frame": {"x":34,"y":247,"w":25,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
@@ -56,7 +56,7 @@
 },
 {
 	"filename": "Ariel_frente2.png",
-	"frame": {"x":183,"y":1,"w":25,"h":25},
+	"frame": {"x":32,"y":302,"w":25,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
@@ -64,8 +64,71 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
+	"filename": "Ariel_manos_atras1.png",
+	"frame": {"x":35,"y":154,"w":31,"h":27},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":7,"w":31,"h":27},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_manos_atras2.png",
+	"frame": {"x":1,"y":221,"w":31,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":9,"w":31,"h":25},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_manos_costado1.png",
+	"frame": {"x":1,"y":275,"w":29,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":8,"w":29,"h":26},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_manos_costado2.png",
+	"frame": {"x":1,"y":303,"w":29,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":9,"w":29,"h":25},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_manos_costado3.png",
+	"frame": {"x":1,"y":248,"w":31,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":9,"w":31,"h":25},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_manos_frente1.png",
+	"frame": {"x":35,"y":187,"w":31,"h":27},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":7,"w":31,"h":27},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Ariel_manos_frente2.png",
+	"frame": {"x":1,"y":192,"w":31,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":7,"w":31,"h":27},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
 	"filename": "Cultista.png",
-	"frame": {"x":85,"y":1,"w":35,"h":46},
+	"frame": {"x":1,"y":106,"w":35,"h":46},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":1,"w":35,"h":46},
@@ -83,7 +146,7 @@
 },
 {
 	"filename": "Llorona.png",
-	"frame": {"x":122,"y":1,"w":32,"h":36},
+	"frame": {"x":1,"y":154,"w":32,"h":36},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":5,"w":32,"h":36},
@@ -92,7 +155,7 @@
 },
 {
 	"filename": "Policia.png",
-	"frame": {"x":48,"y":1,"w":35,"h":50},
+	"frame": {"x":1,"y":54,"w":35,"h":50},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":2,"w":35,"h":50},
@@ -104,8 +167,8 @@
 	"version": "1.0",
 	"image": "personajes.png",
 	"format": "RGBA8888",
-	"size": {"w":234,"h":63},
+	"size": {"w":63,"h":331},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:268c7c367f1d4286cc0e86ba79cd2fb1:d068c919954a438adff6867fdb49fb0d:cde82ef53e88066050ba02263913feb9$"
+	"smartupdate": "$TexturePacker:SmartUpdate:33c3fb58900b7351cdc8d6721e239ca6:c688a360516b8a6aad276a6dbc5934ef:cde82ef53e88066050ba02263913feb9$"
 }
 }
