@@ -10,6 +10,7 @@ import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.EnemyType;
 import gameObjects.Player;
+import gameObjects.PoliceEnemy;
 import states.GameState;
 
 /**
@@ -45,8 +46,8 @@ class EnemyManager
 	
 	public function loadDefaultEnemyes(game:FlxState) {
 
-		instance.loadEnemyes( 2, EnemyType.Farmer);
-		instance.loadEnemyes(2, EnemyType.Kid);
+		loadEnemyes( 2, EnemyType.Farmer);
+		loadEnemyes(2, EnemyType.Kid);
 		loadEnemyes( 2, EnemyType.Police);
 	}
 	private function randomPos():FlxPoint
@@ -57,12 +58,23 @@ class EnemyManager
 	public function loadEnemyes( cuantity:Int, type:EnemyType) {
 		var game = GameState.gamestate;
 		var enemy:Enemy;
-		var pos:FlxPoint;
 		for (i in 0...cuantity) {
-			pos = randomPos();
-			enemy = new Enemy(pos.x, pos.y, type);
+			enemy = getEnemyForType(type);
 			enemies.add(enemy);
 			game.add(enemy);
+		}
+	}
+	
+	private function getEnemyForType(type:EnemyType):Enemy {
+		var pos:FlxPoint;
+		pos = randomPos();
+		switch (type) {
+			case EnemyType.Police:
+				return new PoliceEnemy(pos.x, pos.y);
+			case EnemyType.Kid:
+				return new PoliceEnemy(pos.x, pos.y);
+			case EnemyType.Farmer:
+				return new PoliceEnemy(pos.x, pos.y);
 		}
 	}
 	

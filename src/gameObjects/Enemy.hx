@@ -36,6 +36,11 @@ class Enemy extends FlxSprite
 		path = new FlxPath();
 		currentNode = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
 		resetPath();
+		direction = -1;
+		setAnimation();
+		width = width / 2;
+		height = height / 2;
+		offset.set(width / 2, height / 2);
 	}
 	
 	override public function update():Void 
@@ -45,32 +50,36 @@ class Enemy extends FlxSprite
 		if (path.finished) {
 			resetPath();
 		} else {
-			var newDirection:Int;
-			if (velocity.x > 0) {
-				newDirection = 2;
-			} else if (velocity.x < 0) {
-				newDirection = 3;
-			} else if (velocity.y > 0) {
-				newDirection = 0;
-			} else {
-				newDirection = 1;
-			}
-			if (newDirection != direction) {
-				direction = newDirection;
-				switch(direction) {
-					case 0:
-						animation.play("Front");
-						flipX = false;
-					case 1:
-						animation.play("Back");
-						flipX = false;
-					case 2:
-						animation.play("Horizontal");
-						flipX = flase;
-					case 3:
-						animation.play("Horizontal");
-						flipX = true;
-				}
+			setAnimation();
+		}
+	}
+	
+	private function setAnimation() {
+		var newDirection:Int;
+		if (velocity.x > 0) {
+			newDirection = 2;
+		} else if (velocity.x < 0) {
+			newDirection = 3;
+		} else if (velocity.y > 0) {
+			newDirection = 0;
+		} else {
+			newDirection = 1;
+		}
+		if (newDirection != direction) {
+			direction = newDirection;
+			switch(direction) {
+				case 0:
+					animation.play("Front");
+					flipX = false;
+				case 1:
+					animation.play("Back");
+					flipX = false;
+				case 2:
+					animation.play("Horizontal");
+					flipX = false;
+				case 3:
+					animation.play("Horizontal");
+					flipX = true;
 			}
 		}
 	}
@@ -84,7 +93,7 @@ class Enemy extends FlxSprite
 	{
 		
 		currentNode = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1,[currentNode]);
-			path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
+		path.start(this, GameState.gamestate.mapAI.findPath(FlxPoint.get(this.x+width/2, this.y+height/2), GameState.gamestate.nodes[currentNode].randomDestination()),speedX);
 	}
 
 	public function changeVelocity() {

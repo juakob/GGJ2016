@@ -1,15 +1,16 @@
 package gameObjects;
+import flixel.FlxG;
 
 /**
  * ...
  * @author thepjteam
  */
-class Police extends Enemy
+class PoliceEnemy extends Enemy
 {
 
-	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
+	public function new(X:Float=0, Y:Float=0) 
 	{
-		super(X, Y, type);	
+		super(X, Y, EnemyType.Police);	
 		addAnimations();
 	}
 	
@@ -31,23 +32,23 @@ class Police extends Enemy
 	
 	private function addBackAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
-		framesByName.push("policia_atras1.png");
-		framesByName.push("policia_atras2.png");
-		framesByName.push("policia_atras3.png");
-		framesByName.push("policia_atras4.png");
-		framesByName.push("policia_atras5.png");
-		framesByName.push("policia_atras6.png");
+		framesByName.push("policia_atrás1.png");
+		framesByName.push("policia_atrás2.png");
+		framesByName.push("policia_atrás3.png");
+		framesByName.push("policia_atrás4.png");
+		framesByName.push("policia_atrás5.png");
+		framesByName.push("policia_atrás6.png");
 		animation.addByNames("Back", framesByName, 12);
 	}
 	
 	private function addVerticalAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
-		framesByName.push("policia_costado1.png");
-		framesByName.push("policia_costado2.png");
-		framesByName.push("policia_costado3.png");
-		framesByName.push("policia_costado4.png");
-		framesByName.push("policia_costado5.png");
-		framesByName.push("policia_costado6.png");
+		framesByName.push("policia_costado_1.png");
+		framesByName.push("policia_costado_2.png");
+		framesByName.push("policia_costado_3.png");
+		framesByName.push("policia_costado_4.png");
+		framesByName.push("policia_costado_5.png");
+		framesByName.push("policia_costado_6.png");
 		animation.addByNames("Horizontal", framesByName, 12);
 	}
 }
