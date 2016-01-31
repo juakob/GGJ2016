@@ -1,4 +1,5 @@
 package gameObjects;
+import flixel.FlxG;
 
 /**
  * ...
@@ -6,11 +7,32 @@ package gameObjects;
  */
 class LitleGirldEnemy extends Enemy
 {
-
+	
+	private var timeToStopCrying:Float = 2;
+	private var elapsedTime:Float = 0;
+	public var crying(get, null):Bool = false;
+	public function get_crying():Bool {
+		return crying;
+	}
+	
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		super(X, Y, EnemyType.LitleGirl);
-	addAnimations();
+		addAnimations();
+	}
+	
+	public override function update():Void {
+		if (crying) {
+			elapsedTime += FlxG.elapsed;
+			if (elapsedTime >= timeToStopCrying) {
+				elapsedTime = 0;
+				crying = false;
+				resetPath();
+				setAnimation();
+			}
+		} else {
+			super.update();
+		}
 	}
 	
 	private function addAnimations() {
@@ -54,5 +76,11 @@ class LitleGirldEnemy extends Enemy
 		framesByName.push("nena_llorando7.png");
 		framesByName.push("nena_llorando8.png");
 		animation.addByNames("Crying", framesByName, 12);
+	}
+	
+	public function cry() {
+		animation.play("Crying");
+		path.cancel();
+		crying = true;
 	}
 }

@@ -1,4 +1,5 @@
 package managers;
+import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
@@ -24,6 +25,8 @@ class EnemyManager
 	public function get_gameOver():Bool {
 		return gameOver;
 	}
+	
+	private var auxCryingLitleGirl:LitleGirldEnemy;
 	
 	public var enemies(get, null):FlxGroup;
 	private function get_enemies():FlxGroup {
@@ -91,7 +94,21 @@ class EnemyManager
 	}
 
 	private function enemyPlayer(enemy:Enemy, player:Player):Void {
-		gameOver = true;
+		if (enemy.type == EnemyType.LitleGirl) {
+			var lg:LitleGirldEnemy = cast(enemy, LitleGirldEnemy);
+			lg.cry();
+			auxCryingLitleGirl = lg;
+			enemies.forEachAlive(followCryingLiltleGirl);
+		} else {
+			gameOver = true;
+		}
+	}
+	
+	private function followCryingLiltleGirl(enemy:FlxBasic):Void {
+		if (auxCryingLitleGirl != null) {
+			var point:FlxPoint =  new FlxPoint(auxCryingLitleGirl.x+auxCryingLitleGirl.width/2, auxCryingLitleGirl.y+auxCryingLitleGirl.height/2);
+			cast(enemy, Enemy).pathTo(point);
+		}
 	}
 	
 	private function enemyEnemyCollide(enemy:Enemy, player:Enemy):Void {
