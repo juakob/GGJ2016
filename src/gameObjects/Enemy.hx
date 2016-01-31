@@ -74,17 +74,18 @@ class Enemy extends FlxSprite
 	}
 	
 	private function addHorizontalAnimation() {
+		var framesByName:Array<String> =  new Array<String>();		
+		animation.addByNames("Horizontal", framesByName, 12);
+	}
+	
+	private function addHuesitosAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("huesitos_1.png");
 		framesByName.push("huesitos_2.png");
 		framesByName.push("huesitos_3.png");
 		framesByName.push("huesitos_4.png");
 		framesByName.push("huesitos_5.png");
-		animation.addByNames("Huesitos", framesByName, 12);
-	}
-	
-	private function addHuesitosAnimation() {
-		
+		animation.addByNames("Huesitos", framesByName, 12, false);
 	}
 	
 	override public function update():Void 
