@@ -40,6 +40,7 @@ class GameState extends FlxState
 	public var nodes:Array<PathNode>;
 	
 	public var map:FlxTilemap;
+	public var hackWall:FlxGroup;
 	public var mapAI:FlxTilemap;
 	
 	//PLAYER VARS
@@ -59,10 +60,18 @@ class GameState extends FlxState
 		super();
 		gamestate = this;		
 	}
+	private function createBlock(x:Float,y:Float)
+	{
+		var block:FlxSprite = new FlxSprite(x*tileSize, y*tileSize);
+		block.makeGraphic(tileSize, tileSize);
+		block.immovable = true;
+		hackWall.add(block);
+	}
 	
 	override public function create():Void 
 	{
 		initMap();
+		createHackWalls();
 		initAIMap();
 		var extras = Assets.getText("map/level1_extras.csv");
 		initAINodes(extras);
@@ -82,6 +91,7 @@ class GameState extends FlxState
 	{
 		super.update();
 		FlxG.collide(map, player);
+		FlxG.collide(hackWall, player);
 		player.updateRitualObjectPosition();
 		EnemyManager.instance.enemyUpdates(map, player);
 		PentagramManager.instance.pentagramUpdate(player);
@@ -109,7 +119,22 @@ class GameState extends FlxState
 		mapVisual.loadGraphic("img/test_level_fondo.png");		
 		add(mapVisual);
 	}
-	
+	private function createHackWalls()
+	{
+		hackWall = new FlxGroup();
+		createBlock( -1, 7);
+		createBlock( -1, 9);
+		createBlock(4, -1);
+		createBlock(6, -1);
+		createBlock(25, -1);
+		createBlock(27, -1);
+		createBlock(32, 7);
+		createBlock(32, 9);
+		createBlock(4, 18);
+		createBlock(6, 18);
+		createBlock(25, 18);
+		createBlock(27, 18);
+	}
 	private function initAIMap()
 	{
 		mapAI = new FlxTilemap();
