@@ -3,6 +3,7 @@ package gameObjects;
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
+import helpers.Constants;
 
 /**
  * ...
@@ -14,7 +15,8 @@ class RitualObject extends FlxSprite
 	
 	public function new(X:Float=0, Y:Float=0) 
 	{
-		super(X, Y);		
+		//super(X , Y);		
+		super(X - Constants.TILE_SIZE / 4, Y - Constants.TILE_SIZE / 4);
 		loadTexture();
 		addAnimations();
 		animation.play("shining");

@@ -3,6 +3,7 @@ import flixel.FlxG;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
 import flixel.util.FlxPoint;
+import flixel.util.FlxRandom;
 import gameObjects.EnemyType;
 import gameObjects.Pentagram;
 import gameObjects.Player;
@@ -20,10 +21,11 @@ class PentagramManager
 
 	//PENTAGRAM VARS
 	private var amountOfPentagrams:Int = 4;
-	private var pentagramsCollected:Int = 0;
 	private var pentagrams:FlxTypedGroup<Pentagram>;
 	private var ritualObjects:FlxTypedGroup<RitualObject>;
 	private var tileSize:Int = Constants.TILE_SIZE;
+	private var pentagramsActive:Array<Int>;
+	var currentIndex:Int;
 	
 	public var positionsRitualObjects:Array<FlxPoint>;
 	public var positionsPentagrams:Array<FlxPoint>;
@@ -33,6 +35,10 @@ class PentagramManager
 		return allPentagramsActives;
 	}
 	
+	public static function init()
+	{
+		instance = new PentagramManager();
+	}
 	public static var instance(get, null):PentagramManager;
     private static function get_instance():PentagramManager {
         if(instance == null) {
@@ -42,7 +48,7 @@ class PentagramManager
     }
 	
 	private function new() {
-		
+		pentagramsActive = new Array();
 	}
 	
 	public function pentagramUpdate(player:Player) {
@@ -95,14 +101,16 @@ class PentagramManager
 				pentagram = allPentagrams.shift();
 				allPentagrams.push(pentagram);
 				pentaChecks++;
-				if (player.overlaps(pentagram) && !pentagram.isActive && joinRitualObjectAndPentagram(pentagram, player)) {
+				if (player.overlaps(pentagram) && pentagram.isCalling && joinRitualObjectAndPentagram(pentagram, player)) {
 					done = true;
 					pentagram.Activate();
+					pentagramsActive.push(currentIndex);
+					trace(currentIndex);
+					
 					enemyManager.loadEnemies(2, EnemyType.LitleGirl);
 					enemyManager.loadEnemies(2, EnemyType.Police);
 					enemyManager.loadEnemies(2, EnemyType.Farmer);
 					
-					pentagramsCollected++;
 					//FlxG.log.advanced("Pentagram removed. Pentagrams checked: " + pentaChecks);
 					
 					//ME DESHAGO POR COMPLETO DEL OBJETO
@@ -137,6 +145,7 @@ class PentagramManager
 				ritualObject = allRitualObjects.shift();
 				if (ritualObject != null && player.overlaps(ritualObject)) {
 					
+					callingRandom();
 					//if (player.ritualObjectHold != null) {
 						////REVIVO EL OBJETO VIEJO; PENSADO PARA PODER LEVANTAR OBJETOS DISTINTOS PARA CIRCULOS DISTINTOS
 						//var adjustmentX:Float = 0;
@@ -162,6 +171,19 @@ class PentagramManager
 				//SIEMPRE LO DEVOLVEMOS AL ARRAY PORQUE SE DESTRUYEN AL LLEVARLO AL CIRCULO DEL RITUAL
 				allRitualObjects.push(ritualObject);
 			}
+		}
+	}
+	public function callingRandom():Void
+	{
+		currentIndex = FlxRandom.intRanged(0, pentagrams.members.length - 1);
+		while (true)
+		{
+			if (!pentagrams.members[currentIndex].isActive)
+			{
+				pentagrams.members[currentIndex].Calling();
+				return;
+			}
+			currentIndex =++currentIndex % pentagrams.length;
 		}
 	}
 	

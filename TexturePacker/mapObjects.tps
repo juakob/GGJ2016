@@ -192,16 +192,34 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../assets/img/pentagrama_sinActivar.png</filename>
             <filename>../assets/img/cabra_2.png</filename>
             <filename>../assets/img/cabra_3.png</filename>
-            <filename>../assets/img/pentagrama_animado1.png</filename>
-            <filename>../assets/img/pentagrama_animado2.png</filename>
             <filename>../assets/img/cabra_4.png</filename>
             <filename>../assets/img/caldero_y_velitas_4.png</filename>
             <filename>../assets/img/caldero_y_velitas_1.png</filename>
             <filename>../assets/img/caldero_y_velitas_2.png</filename>
             <filename>../assets/img/caldero_y_velitas_3.png</filename>
+            <filename>../assets/img/pentagrama_llamada2.png</filename>
+            <filename>../assets/img/pentagrama_llamada1.png</filename>
+            <filename>../assets/img/pentagrama_llamada.png</filename>
+            <filename>../assets/img/pentagrama_desactivado.png</filename>
+            <filename>../assets/img/pentagrama_activado3.png</filename>
+            <filename>../assets/img/pentagrama_activado4.png</filename>
+            <filename>../assets/img/pentagrama_activado2.png</filename>
+            <filename>../assets/img/pentagrama_activado1.png</filename>
+            <filename>../assets/img/pentagrama_llamada5.png</filename>
+            <filename>../assets/img/pentagrama_llamada6.png</filename>
+            <filename>../assets/img/pentagrama_llamada3.png</filename>
+            <filename>../assets/img/pasto000005.png</filename>
+            <filename>../assets/img/pasto000006.png</filename>
+            <filename>../assets/img/pasto000007.png</filename>
+            <filename>../assets/img/pasto000008.png</filename>
+            <filename>../assets/img/pasto000009.png</filename>
+            <filename>../assets/img/pasto000010.png</filename>
+            <filename>../assets/img/pasto000001.png</filename>
+            <filename>../assets/img/pasto000002.png</filename>
+            <filename>../assets/img/pasto000003.png</filename>
+            <filename>../assets/img/pasto000004.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

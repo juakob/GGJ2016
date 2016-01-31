@@ -3,6 +3,7 @@ package gameObjects;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.loaders.TexturePackerData;
+import helpers.Constants;
 import states.GameState;
 
 /**
@@ -18,7 +19,9 @@ class Caldero extends FlxSprite
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
-		super(X, Y);
+		//super(X, Y);
+		super(X + Constants.TILE_SIZE / 8, Y);
+		
 		
 		var texturePacker:TexturePackerData = new TexturePackerData("spritesheet/mapObjects.json", "spritesheet/mapObjects.png");
 		loadGraphicFromTexture(texturePacker);
@@ -26,9 +29,10 @@ class Caldero extends FlxSprite
 		
 		animation.play("bubbling");
 		
-		width = (59/2);
-		height = (44/2)-5;
-		offset.set(18, (height / 2)+5);
+		this.width = Constants.TILE_SIZE/2;
+		this.height = Constants.TILE_SIZE/2;
+		offset.x += Constants.TILE_SIZE / 2;
+		offset.y += Constants.TILE_SIZE;
 		
 		immovable = true;
 	}
