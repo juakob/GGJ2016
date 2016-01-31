@@ -17,6 +17,7 @@ class Caldero extends FlxSprite
 	
 	public var demon:FlxSprite;
 	public var playAgain:FlxSprite;
+	public var banner:FlxSprite;
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -46,10 +47,23 @@ class Caldero extends FlxSprite
 		if (demon != null && demon.animation.get("spawning").finished) {
 			demon.animation.play("idle");
 			if (playAgain == null) {
-				playAgain = new FlxSprite(250, 450, "img/play_again.png");
+				playAgain = new FlxSprite(250, 550, "img/play_again.png");
 				GameState.gamestate.add(playAgain);
+				
+				banner= new FlxSprite(60, 200, "img/victorybanner.png");
+				GameState.gamestate.add(banner);
 			}
 		}
+		//if (FlxG.keys.pressed.X) {
+			//demon.animation.play("idle");
+			//if (playAgain == null) {
+				//playAgain = new FlxSprite(250, 550, "img/play_again.png");
+				//GameState.gamestate.add(playAgain);
+				//
+				//banner= new FlxSprite(60, 200, "img/victorybanner.png");
+				//GameState.gamestate.add(banner);
+			//}
+		//}
 	}
 	
 	public function addBubblingAnimation() {
@@ -72,9 +86,7 @@ class Caldero extends FlxSprite
 			GameState.gamestate.add(demon);
 			demon.animation.play("spawning");
 			demon.x = this.x-demon._halfWidth+16;
-			demon.y = this.y - demon.height*(4/5);
-			//FlxG.log.advanced("X: "+demon.x+" Y: "+demon.y);
-			//FlxG.log.advanced("Width: "+demon.width+" Height: "+demon.height);			
+			demon.y = this.y - demon.height * (4 / 5);
 		}
 	}
 	
