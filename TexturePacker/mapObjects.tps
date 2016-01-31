@@ -182,13 +182,13 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">None</enum>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
             <false/>
             <key>pivotPoint</key>
-            <enum type="SpriteSettings::PivotPoint">BottomRight</enum>
+            <enum type="SpriteSettings::PivotPoint">Center</enum>
         </struct>
         <key>fileList</key>
         <array>
@@ -210,6 +210,16 @@
             <filename>../assets/img/pentagrama_llamada5.png</filename>
             <filename>../assets/img/pentagrama_llamada6.png</filename>
             <filename>../assets/img/pentagrama_llamada3.png</filename>
+            <filename>../assets/img/pasto000005.png</filename>
+            <filename>../assets/img/pasto000006.png</filename>
+            <filename>../assets/img/pasto000007.png</filename>
+            <filename>../assets/img/pasto000008.png</filename>
+            <filename>../assets/img/pasto000009.png</filename>
+            <filename>../assets/img/pasto000010.png</filename>
+            <filename>../assets/img/pasto000001.png</filename>
+            <filename>../assets/img/pasto000002.png</filename>
+            <filename>../assets/img/pasto000003.png</filename>
+            <filename>../assets/img/pasto000004.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

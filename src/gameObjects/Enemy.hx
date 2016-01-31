@@ -34,11 +34,11 @@ class Enemy extends FlxSprite
 	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
 	{
 		super(X, Y);
+		this.type = type;
 	}	
 	
 	
 	private function initAll() {
-		this.type = type;
 		speedX = 100;
 		speedY = 100;
 		loadTexture();
