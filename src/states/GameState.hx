@@ -83,7 +83,7 @@ class GameState extends FlxState
 	}
 	
 	public function initExtras() {
-		caldero = new Caldero(player.x-Constants.TILE_SIZE/3, player.y - Constants.TILE_SIZE*(2/3));
+		caldero = new Caldero((16*tileSize)-Constants.TILE_SIZE/3, (9*tileSize) - Constants.TILE_SIZE*(2/3));
 		add(caldero);
 	}
 	
@@ -93,7 +93,7 @@ class GameState extends FlxState
 		FlxG.collide(map, player);
 		FlxG.collide(hackWall, player);
 		player.updateRitualObjectPosition();
-		//EnemyManager.instance.enemyUpdates(map, player);
+		EnemyManager.instance.enemyUpdates(map, player);
 		PentagramManager.instance.pentagramUpdate(player);
 		FlxG.collide(player, caldero);
 		checkGameOver();
@@ -144,7 +144,7 @@ class GameState extends FlxState
 	}
 	
 	private function initPlayer() {
-		player = new Player(16*tileSize, 9*tileSize);
+		player = new Player(15*tileSize, 8*tileSize);
 		add(player);
 	}
 	
