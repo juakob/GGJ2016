@@ -126,7 +126,7 @@ class Enemy extends FlxSprite
 	public function die()
 	{
 		path.cancel();
-		animation.play("Death");
+		//animation.play("Death");
 	}
 	private override function addDeath() {
 		var framesByName:Array<String> =  new Array<String>();
