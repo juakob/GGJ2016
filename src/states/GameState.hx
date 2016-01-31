@@ -6,6 +6,8 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxTypedGroup;
+import flixel.util.loaders.TexturePackerData;
+import gameObjects.Caldero;
 import helpers.Constants;
 import helpers.MapReader;
 import managers.PentagramManager;
@@ -49,6 +51,9 @@ class GameState extends FlxState
 	
 	private var tileSize:Int = Constants.TILE_SIZE;
 	
+	//EXTRAS
+	var caldero:FlxSprite;
+	
 	public function new() 
 	{
 		super();
@@ -65,11 +70,12 @@ class GameState extends FlxState
 		initEnemies();
 		initPentagrams(extras);
 		
-		initCaldero();
+		initExtras();
 	}
 	
-	public function initCaldero() {
-		var caldero:FlxSprite;
+	public function initExtras() {
+		caldero = new Caldero(player.x-Constants.TILE_SIZE/3, player.y - Constants.TILE_SIZE*(2/3));
+		add(caldero);
 	}
 	
 	override public function update():Void 
@@ -79,6 +85,7 @@ class GameState extends FlxState
 		player.updateRitualObjectPosition();
 		EnemyManager.instance.enemyUpdates(map, player);
 		PentagramManager.instance.pentagramUpdate(player);
+		FlxG.collide(player, caldero);
 		checkGameOver();
 		checkGameWin();
 	}
