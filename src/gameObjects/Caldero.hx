@@ -16,6 +16,7 @@ class Caldero extends FlxSprite
 	private static var spriteHeight:Int = 44;
 	
 	public var demon:FlxSprite;
+	public var playAgain:FlxSprite;
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -43,7 +44,10 @@ class Caldero extends FlxSprite
 		}
 		if (demon != null && demon.animation.get("spawning").finished) {
 			demon.animation.play("idle");
-			GameState.gamestate.add(new FlxSprite(250, 450, "img/play_again.png"));
+			if (playAgain == null) {
+				playAgain = new FlxSprite(250, 450, "img/play_again.png");
+				GameState.gamestate.add(playAgain);
+			}
 		}
 	}
 	
