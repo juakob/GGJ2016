@@ -25,6 +25,8 @@ class Pentagram extends FlxSprite
 		//super(X, Y);
 		super(X - Constants.TILE_SIZE / 2, Y - Constants.TILE_SIZE / 2);
 		
+		offset.x += Constants.TILE_SIZE / 2 - Constants.TILE_SIZE / 8;
+		offset.y += Constants.TILE_SIZE / 2 - Constants.TILE_SIZE / 8;
 		
 		loadTexture();
 		addAnimations();

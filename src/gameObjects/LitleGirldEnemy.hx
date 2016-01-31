@@ -18,7 +18,9 @@ class LitleGirldEnemy extends Enemy
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		super(X, Y, EnemyType.LitleGirl);
+		initAll();
 		addAnimations();
+		setAnimation();
 	}
 	
 	public override function update():Void {
@@ -36,28 +38,28 @@ class LitleGirldEnemy extends Enemy
 		}
 	}
 	
-	private function addAnimations() {
+	private override function addAnimations() {
 		addFrontAnimation();
 		addBackAnimation();
 		addHorizontalAnimation();
 		addCryingAnimation();
 	}
 	
-	private function addFrontAnimation() {
+	private override function addFrontAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("nena_frente1.png");
 		framesByName.push("nena_frente2.png");
 		animation.addByNames("Front", framesByName, 12);
 	}
 	
-	private function addBackAnimation() {
+	private override function addBackAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("nena_atras1.png");
 		framesByName.push("nena_atras2.png");
 		animation.addByNames("Back", framesByName, 12);
 	}
 	
-	private function addHorizontalAnimation() {
+	private override function addHorizontalAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("nena_costado1.png");
 		framesByName.push("nena_costado2.png");

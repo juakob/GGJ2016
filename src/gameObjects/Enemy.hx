@@ -34,6 +34,10 @@ class Enemy extends FlxSprite
 	public function new(X:Float=0, Y:Float=0, type:EnemyType) 
 	{
 		super(X, Y);
+	}	
+	
+	
+	private function initAll() {
 		this.type = type;
 		speedX = 100;
 		speedY = 100;
@@ -44,12 +48,32 @@ class Enemy extends FlxSprite
 		currentNode = FlxRandom.intRanged(0, GameState.gamestate.nodes.length-1);
 		resetPath();
 		direction = -1;
-		setAnimation();
 		width = width / 2;
 		height = height / 2;
 		offset.set(width / 2, height / 2);
 		realColor = color;
-	}	
+	}
+	
+	private function addAnimations() {
+		addFrontAnimation();
+		addBackAnimation();
+		addHorizontalAnimation();
+	}
+	
+	private function addFrontAnimation() {
+		var framesByName:Array<String> =  new Array<String>();
+		animation.addByNames("Front", framesByName, 12);
+	}
+	
+	private function addBackAnimation() {
+		var framesByName:Array<String> =  new Array<String>();
+		animation.addByNames("Back", framesByName, 12);
+	}
+	
+	private function addHorizontalAnimation() {
+		var framesByName:Array<String> =  new Array<String>();
+		animation.addByNames("Horizontal", framesByName, 12);
+	}
 	
 	override public function update():Void 
 	{

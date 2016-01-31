@@ -11,16 +11,12 @@ class PoliceEnemy extends Enemy
 	public function new(X:Float=0, Y:Float=0) 
 	{
 		super(X, Y, EnemyType.Police);	
+		initAll();
 		addAnimations();
+		setAnimation();
 	}
 	
-	private function addAnimations() {
-		addFrontAnimation();
-		addBackAnimation();
-		addHorizontalAnimation();
-	}
-	
-	private function addFrontAnimation() {
+	private override function addFrontAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("policia_frente1.png");
 		framesByName.push("policia_frente2.png");
@@ -30,7 +26,7 @@ class PoliceEnemy extends Enemy
 		animation.addByNames("Front", framesByName, 12);
 	}
 	
-	private function addBackAnimation() {
+	private override function addBackAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("policia_atrás1.png");
 		framesByName.push("policia_atrás2.png");
@@ -41,7 +37,7 @@ class PoliceEnemy extends Enemy
 		animation.addByNames("Back", framesByName, 12);
 	}
 	
-	private function addHorizontalAnimation() {
+	private override function addHorizontalAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("policia_costado_1.png");
 		framesByName.push("policia_costado_2.png");
