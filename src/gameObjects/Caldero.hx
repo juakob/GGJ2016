@@ -1,7 +1,9 @@
 package gameObjects;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.loaders.TexturePackerData;
+import states.GameState;
 
 /**
  * ...
@@ -12,7 +14,7 @@ class Caldero extends FlxSprite
 	private static var spriteWidth:Int = 59;
 	private static var spriteHeight:Int = 44;
 	
-	private static var demon:FlxSprite;
+	public var demon:FlxSprite;
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -31,6 +33,15 @@ class Caldero extends FlxSprite
 		immovable = true;
 	}
 	
+	override public function update():Void {
+		if (demon==null && FlxG.keys.pressed.X) {
+			initDemon();
+		}
+		if (demon != null && demon.animation.get("spawning").finished) {
+			demon.animation.play("idle");
+		}
+	}
+	
 	public function addBubblingAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("caldero_y_velitas_1.png");
@@ -40,39 +51,80 @@ class Caldero extends FlxSprite
 		animation.addByNames("bubbling", framesByName, 12);
 	}
 	
-	public function invokeDemon() {
-		var texturePacker:TexturePackerData = new TexturePackerData("spritesheet/demon.json", "spritesheet/demon.png");
-		demon = new FlxSprite();
-		demon.loadGraphicFromTexture(texturePacker);
-		addDemonSpawningAnimation();
-		addDemonIdle();
+	public function initDemon() {
+		if (demon == null) {
+			var texturePacker:TexturePackerData = new TexturePackerData("spritesheet/demon.json", "spritesheet/demon.png");
+			demon = new FlxSprite();
+			demon.loadGraphicFromTexture(texturePacker);
+			addDemonSpawningAnimation();
+			addDemonIdle();
+			GameState.gamestate.add(demon);
+			demon.animation.play("spawning");
+			demon.x = this.x-demon._halfWidth+16;
+			demon.y = this.y - demon.height*(4/5);
+			//FlxG.log.advanced("X: "+demon.x+" Y: "+demon.y);
+			//FlxG.log.advanced("Width: "+demon.width+" Height: "+demon.height);			
+		}
 	}
 	
 	public function addDemonSpawningAnimation() {
 		var framesByName:Array<String> = new Array<String>();
-		var fileName:String = "demonAnimation";
-		framesByName.push(fileName+".png");
-		for (i in 1...29) {
-			if (i < 10) {
-				framesByName.push(fileName+"000" + i + ".png");
-			}else {
-				framesByName.push(fileName+"00" + i + ".png");
-			}
-		}
-		animation.addByNames("spawning",framesByName);
+		
+		framesByName.push("demonAnimation.png");
+		framesByName.push("demonAnimation0001.png");
+		framesByName.push("demonAnimation0002.png");
+		framesByName.push("demonAnimation0003.png");
+		framesByName.push("demonAnimation0004.png");
+		framesByName.push("demonAnimation0005.png");
+		framesByName.push("demonAnimation0006.png");
+		framesByName.push("demonAnimation0007.png");
+		framesByName.push("demonAnimation0008.png");
+		framesByName.push("demonAnimation0009.png");
+		framesByName.push("demonAnimation0010.png");
+		framesByName.push("demonAnimation0011.png");
+		framesByName.push("demonAnimation0012.png");
+		
+		demon.animation.addByNames("spawning",framesByName,12,false);
 	}
 	
 	public function addDemonIdle() {
 		var framesByName:Array<String> = new Array<String>();
-		var fileName:String = "demonAnimation";
-		framesByName.push(fileName+".png");
-		for (i in 1...29) {
-			if (i < 10) {
-				framesByName.push(fileName+"000" + i + ".png");
-			}else {
-				framesByName.push(fileName+"00" + i + ".png");
-			}
-		}
-		animation.addByNames("idle",framesByName);		
+		
+		framesByName.push("demonAnimation0012.png");
+		framesByName.push("demonAnimation0013.png");
+		framesByName.push("demonAnimation0014.png");
+		framesByName.push("demonAnimation0015.png");
+		framesByName.push("demonAnimation0016.png");
+		framesByName.push("demonAnimation0017.png");
+		framesByName.push("demonAnimation0018.png");
+		framesByName.push("demonAnimation0019.png");
+		framesByName.push("demonAnimation0020.png");
+		framesByName.push("demonAnimation0021.png");
+		framesByName.push("demonAnimation0022.png");
+		framesByName.push("demonAnimation0023.png");
+		framesByName.push("demonAnimation0024.png");
+		framesByName.push("demonAnimation0025.png");
+		framesByName.push("demonAnimation0026.png");
+		framesByName.push("demonAnimation0027.png");
+		framesByName.push("demonAnimation0028.png");
+		framesByName.push("demonAnimation0027.png");
+		framesByName.push("demonAnimation0026.png");
+		framesByName.push("demonAnimation0025.png");
+		framesByName.push("demonAnimation0024.png");
+		framesByName.push("demonAnimation0023.png");
+		framesByName.push("demonAnimation0022.png");
+		framesByName.push("demonAnimation0021.png");
+		framesByName.push("demonAnimation0020.png");
+		framesByName.push("demonAnimation0019.png");
+		framesByName.push("demonAnimation0018.png");
+		framesByName.push("demonAnimation0017.png");
+		framesByName.push("demonAnimation0016.png");
+		framesByName.push("demonAnimation0015.png");
+		framesByName.push("demonAnimation0014.png");
+		framesByName.push("demonAnimation0013.png");
+		framesByName.push("demonAnimation0012.png");
+		framesByName.push("demonAnimation0012.png");
+		
+		demon.animation.addByNames("idle",framesByName,12,true);		
 	}
 }
