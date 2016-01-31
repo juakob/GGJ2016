@@ -9,6 +9,7 @@ import flixel.util.FlxPoint;
 import flixel.util.FlxRandom;
 import gameObjects.Enemy;
 import gameObjects.EnemyType;
+import gameObjects.LitleGirldEnemy;
 import gameObjects.Player;
 import gameObjects.PoliceEnemy;
 import states.GameState;
@@ -47,7 +48,7 @@ class EnemyManager
 	public function loadDefaultEnemyes(game:FlxState) {
 
 		loadEnemyes( 2, EnemyType.Farmer);
-		loadEnemyes(2, EnemyType.Kid);
+		loadEnemyes(2, EnemyType.LitleGirl);
 		loadEnemyes( 2, EnemyType.Police);
 	}
 	private function randomPos():FlxPoint
@@ -71,8 +72,8 @@ class EnemyManager
 		switch (type) {
 			case EnemyType.Police:
 				return new PoliceEnemy(pos.x, pos.y);
-			case EnemyType.Kid:
-				return new PoliceEnemy(pos.x, pos.y);
+			case EnemyType.LitleGirl:
+				return new LitleGirldEnemy(pos.x, pos.y);
 			case EnemyType.Farmer:
 				return new PoliceEnemy(pos.x, pos.y);
 		}

@@ -232,6 +232,22 @@
             <filename>../assets/img/policia_costado_2.png</filename>
             <filename>../assets/img/policia_costado_1.png</filename>
             <filename>../assets/img/policia_atrás6.png</filename>
+            <filename>../assets/img/nena_costado4.png</filename>
+            <filename>../assets/img/nena_costado3.png</filename>
+            <filename>../assets/img/nena_costado2.png</filename>
+            <filename>../assets/img/nena_costado1.png</filename>
+            <filename>../assets/img/nena_atras1.png</filename>
+            <filename>../assets/img/nena_atras2.png</filename>
+            <filename>../assets/img/nena_llorando8.png</filename>
+            <filename>../assets/img/nena_llorando7.png</filename>
+            <filename>../assets/img/nena_llorando6.png</filename>
+            <filename>../assets/img/nena_llorando5.png</filename>
+            <filename>../assets/img/nena_llorando4.png</filename>
+            <filename>../assets/img/nena_llorando3.png</filename>
+            <filename>../assets/img/nena_llorando2.png</filename>
+            <filename>../assets/img/nena_llorando1.png</filename>
+            <filename>../assets/img/nena_frente1.png</filename>
+            <filename>../assets/img/nena_frente2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

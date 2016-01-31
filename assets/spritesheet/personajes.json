@@ -2,7 +2,7 @@
 
 {
 	"filename": "Ariel_atras1.png",
-	"frame": {"x":217,"y":59,"w":25,"h":25},
+	"frame": {"x":38,"y":84,"w":25,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
@@ -11,7 +11,7 @@
 },
 {
 	"filename": "Ariel_atras2.png",
-	"frame": {"x":38,"y":102,"w":25,"h":23},
+	"frame": {"x":35,"y":141,"w":25,"h":23},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
@@ -20,7 +20,7 @@
 },
 {
 	"filename": "Ariel_costado1.png",
-	"frame": {"x":92,"y":101,"w":25,"h":24},
+	"frame": {"x":149,"y":82,"w":25,"h":24},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
@@ -29,7 +29,7 @@
 },
 {
 	"filename": "Ariel_costado2.png",
-	"frame": {"x":65,"y":102,"w":25,"h":23},
+	"frame": {"x":62,"y":141,"w":25,"h":23},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
@@ -38,7 +38,7 @@
 },
 {
 	"filename": "Ariel_costado3.png",
-	"frame": {"x":244,"y":56,"w":25,"h":23},
+	"frame": {"x":150,"y":57,"w":25,"h":23},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
@@ -47,7 +47,7 @@
 },
 {
 	"filename": "Ariel_frente1.png",
-	"frame": {"x":239,"y":29,"w":25,"h":25},
+	"frame": {"x":148,"y":112,"w":25,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
@@ -56,7 +56,7 @@
 },
 {
 	"filename": "Ariel_frente2.png",
-	"frame": {"x":246,"y":1,"w":25,"h":25},
+	"frame": {"x":213,"y":28,"w":25,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":25},
@@ -65,8 +65,8 @@
 },
 {
 	"filename": "Ariel_manos_atras1.png",
-	"frame": {"x":75,"y":39,"w":31,"h":27},
-	"rotated": true,
+	"frame": {"x":85,"y":1,"w":31,"h":27},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":7,"w":31,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -74,8 +74,8 @@
 },
 {
 	"filename": "Ariel_manos_atras2.png",
-	"frame": {"x":104,"y":34,"w":31,"h":25},
-	"rotated": true,
+	"frame": {"x":184,"y":1,"w":31,"h":25},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":9,"w":31,"h":25},
 	"sourceSize": {"w":40,"h":40},
@@ -83,8 +83,8 @@
 },
 {
 	"filename": "Ariel_manos_costado1.png",
-	"frame": {"x":108,"y":67,"w":29,"h":26},
-	"rotated": true,
+	"frame": {"x":119,"y":30,"w":29,"h":26},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":29,"h":26},
 	"sourceSize": {"w":40,"h":40},
@@ -92,7 +92,7 @@
 },
 {
 	"filename": "Ariel_manos_costado2.png",
-	"frame": {"x":119,"y":98,"w":29,"h":25},
+	"frame": {"x":150,"y":30,"w":29,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":9,"w":29,"h":25},
@@ -101,8 +101,8 @@
 },
 {
 	"filename": "Ariel_manos_costado3.png",
-	"frame": {"x":111,"y":1,"w":31,"h":25},
-	"rotated": true,
+	"frame": {"x":217,"y":1,"w":31,"h":25},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":9,"w":31,"h":25},
 	"sourceSize": {"w":40,"h":40},
@@ -110,7 +110,7 @@
 },
 {
 	"filename": "Ariel_manos_frente1.png",
-	"frame": {"x":75,"y":72,"w":31,"h":27},
+	"frame": {"x":118,"y":1,"w":31,"h":27},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":7,"w":31,"h":27},
@@ -119,8 +119,8 @@
 },
 {
 	"filename": "Ariel_manos_frente2.png",
-	"frame": {"x":82,"y":1,"w":31,"h":27},
-	"rotated": true,
+	"frame": {"x":151,"y":1,"w":31,"h":27},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":7,"w":31,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -128,7 +128,7 @@
 },
 {
 	"filename": "Cultista.png",
-	"frame": {"x":38,"y":54,"w":35,"h":46},
+	"frame": {"x":48,"y":1,"w":35,"h":46},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":1,"w":35,"h":46},
@@ -146,7 +146,7 @@
 },
 {
 	"filename": "Llorona.png",
-	"frame": {"x":48,"y":1,"w":32,"h":36},
+	"frame": {"x":1,"y":106,"w":32,"h":36},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":5,"y":5,"w":32,"h":36},
@@ -163,8 +163,152 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
+	"filename": "nena_atras1.png",
+	"frame": {"x":177,"y":57,"w":25,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_atras2.png",
+	"frame": {"x":201,"y":108,"w":25,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_costado1.png",
+	"frame": {"x":176,"y":82,"w":25,"h":24},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_costado2.png",
+	"frame": {"x":204,"y":55,"w":25,"h":24},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_costado3.png",
+	"frame": {"x":175,"y":108,"w":25,"h":24},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_costado4.png",
+	"frame": {"x":204,"y":55,"w":25,"h":24},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":24},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_frente1.png",
+	"frame": {"x":204,"y":81,"w":25,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_frente2.png",
+	"frame": {"x":229,"y":81,"w":25,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando1.png",
+	"frame": {"x":226,"y":108,"w":25,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando2.png",
+	"frame": {"x":38,"y":54,"w":28,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":10,"w":28,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando3.png",
+	"frame": {"x":85,"y":30,"w":32,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":10,"w":32,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando4.png",
+	"frame": {"x":203,"y":135,"w":25,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando5.png",
+	"frame": {"x":226,"y":108,"w":25,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando6.png",
+	"frame": {"x":38,"y":54,"w":28,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":10,"w":28,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando7.png",
+	"frame": {"x":85,"y":30,"w":32,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":10,"w":32,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "nena_llorando8.png",
+	"frame": {"x":228,"y":133,"w":25,"h":23},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":10,"w":25,"h":23},
+	"sourceSize": {"w":40,"h":40},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
 	"filename": "policia_atrás1.png",
-	"frame": {"x":150,"y":94,"w":25,"h":27},
+	"frame": {"x":63,"y":55,"w":25,"h":27},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
@@ -173,8 +317,8 @@
 },
 {
 	"filename": "policia_atrás2.png",
-	"frame": {"x":163,"y":61,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":90,"y":55,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -182,8 +326,8 @@
 },
 {
 	"filename": "policia_atrás3.png",
-	"frame": {"x":185,"y":31,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":119,"y":112,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -191,8 +335,8 @@
 },
 {
 	"filename": "policia_atrás4.png",
-	"frame": {"x":192,"y":1,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":116,"y":139,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -200,7 +344,7 @@
 },
 {
 	"filename": "policia_atrás5.png",
-	"frame": {"x":231,"y":86,"w":24,"h":25},
+	"frame": {"x":65,"y":84,"w":24,"h":25},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":8,"y":7,"w":24,"h":25},
@@ -209,8 +353,8 @@
 },
 {
 	"filename": "policia_atrás6.png",
-	"frame": {"x":177,"y":90,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":145,"y":139,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -218,8 +362,8 @@
 },
 {
 	"filename": "policia_costado_1.png",
-	"frame": {"x":219,"y":1,"w":25,"h":26},
-	"rotated": false,
+	"frame": {"x":91,"y":82,"w":25,"h":26},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":26},
 	"sourceSize": {"w":40,"h":40},
@@ -227,8 +371,8 @@
 },
 {
 	"filename": "policia_costado_2.png",
-	"frame": {"x":190,"y":60,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":174,"y":139,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -236,8 +380,8 @@
 },
 {
 	"filename": "policia_costado_3.png",
-	"frame": {"x":212,"y":30,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":184,"y":28,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -245,8 +389,8 @@
 },
 {
 	"filename": "policia_costado_4.png",
-	"frame": {"x":204,"y":89,"w":25,"h":26},
-	"rotated": false,
+	"frame": {"x":91,"y":109,"w":25,"h":26},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":9,"w":25,"h":26},
 	"sourceSize": {"w":40,"h":40},
@@ -254,8 +398,8 @@
 },
 {
 	"filename": "policia_costado_5.png",
-	"frame": {"x":212,"y":30,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":184,"y":28,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -263,8 +407,8 @@
 },
 {
 	"filename": "policia_costado_6.png",
-	"frame": {"x":190,"y":60,"w":25,"h":27},
-	"rotated": false,
+	"frame": {"x":174,"y":139,"w":25,"h":27},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":8,"w":25,"h":27},
 	"sourceSize": {"w":40,"h":40},
@@ -272,7 +416,7 @@
 },
 {
 	"filename": "policia_frente1.png",
-	"frame": {"x":131,"y":34,"w":25,"h":28},
+	"frame": {"x":35,"y":111,"w":25,"h":28},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":7,"w":25,"h":28},
@@ -281,8 +425,8 @@
 },
 {
 	"filename": "policia_frente2.png",
-	"frame": {"x":138,"y":1,"w":25,"h":28},
-	"rotated": false,
+	"frame": {"x":119,"y":58,"w":25,"h":28},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":7,"w":25,"h":28},
 	"sourceSize": {"w":40,"h":40},
@@ -290,7 +434,7 @@
 },
 {
 	"filename": "policia_frente3.png",
-	"frame": {"x":136,"y":64,"w":25,"h":28},
+	"frame": {"x":62,"y":111,"w":25,"h":28},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":7,"w":25,"h":28},
@@ -299,8 +443,8 @@
 },
 {
 	"filename": "policia_frente4.png",
-	"frame": {"x":158,"y":31,"w":25,"h":28},
-	"rotated": false,
+	"frame": {"x":119,"y":85,"w":25,"h":28},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":7,"w":25,"h":28},
 	"sourceSize": {"w":40,"h":40},
@@ -308,7 +452,7 @@
 },
 {
 	"filename": "policia_frente5.png",
-	"frame": {"x":165,"y":1,"w":25,"h":28},
+	"frame": {"x":89,"y":136,"w":25,"h":28},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":7,"y":7,"w":25,"h":28},
@@ -320,8 +464,8 @@
 	"version": "1.0",
 	"image": "personajes.png",
 	"format": "RGBA8888",
-	"size": {"w":272,"h":126},
+	"size": {"w":253,"h":165},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:dde0220831fa8daee10df0aa7f1ad084:a1cbe7e972b12a7f5ce9c3f6d1fd84e9:cde82ef53e88066050ba02263913feb9$"
+	"smartupdate": "$TexturePacker:SmartUpdate:3ef8d643d4b3553f344e72665bd93ee4:fac559210900737aa05f601cb054d7a6:cde82ef53e88066050ba02263913feb9$"
 }
 }

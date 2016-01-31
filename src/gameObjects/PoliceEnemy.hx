@@ -17,7 +17,7 @@ class PoliceEnemy extends Enemy
 	private function addAnimations() {
 		addFrontAnimation();
 		addBackAnimation();
-		addVerticalAnimation();
+		addHorizontalAnimation();
 	}
 	
 	private function addFrontAnimation() {
@@ -41,7 +41,7 @@ class PoliceEnemy extends Enemy
 		animation.addByNames("Back", framesByName, 12);
 	}
 	
-	private function addVerticalAnimation() {
+	private function addHorizontalAnimation() {
 		var framesByName:Array<String> =  new Array<String>();
 		framesByName.push("policia_costado_1.png");
 		framesByName.push("policia_costado_2.png");
