@@ -98,6 +98,11 @@ class EnemyManager
 			var lg:LitleGirldEnemy = cast(enemy, LitleGirldEnemy);
 			if (lg.cry()) {
 				FlxG.sound.play("sounds/scream.mp3");
+				FlxG.sound.play("sounds/ohh.mp3");
+				FlxG.sound.play("sounds/ohh.mp3");
+				FlxG.sound.play("sounds/ohh.mp3");
+				/*var timer = new haxe.Timer(1000); // 1000ms delay
+				timer.run = function() { FlxG.sound.play("sounds/ohh.mp3"); this.stop(); };*/
 				auxCryingLitleGirl = lg;
 				enemies.forEachAlive(followCryingLiltleGirl);
 			}
@@ -114,7 +119,6 @@ class EnemyManager
 				var point:FlxPoint =  new FlxPoint(auxCryingLitleGirl.x+auxCryingLitleGirl.width/2, auxCryingLitleGirl.y+auxCryingLitleGirl.height/2);
 				realEnemy.pathTo(point, 100);
 				realEnemy.followigGirl = true;
-				FlxG.sound.play("sounds/ohh.mp3");
 			}
 		}
 	}

@@ -40,6 +40,8 @@ class Player extends FlxSprite
 	
 	public var isCaught:Bool = false;
 	
+	public var isFinish:Bool = false;
+	
 	private var isMoving:Bool;
 	
 	private var playerWalk:FlxSound;
@@ -135,6 +137,10 @@ class Player extends FlxSprite
 	
 	override public function update():Void 
 	{
+		if (isFinish)
+		{
+			return;
+		}
 		super.update();
 		if (!isCaught) {
 			move();
