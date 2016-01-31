@@ -1,5 +1,6 @@
 package gameObjects;
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.util.loaders.TexturePackerData;
@@ -12,19 +13,15 @@ import helpers.Constants;
 class Pentagram extends FlxSprite
 {
 	public var isActive(get, null):Bool;
-	public var isLock:Bool;
+	public var isCalling(default, null):Bool;
 	private function get_isActive():Bool {
 		return isActive;
 	}
 	
-	public var isCalling(get, null):Bool;
-	private function get_isCalling():Bool {
-		return isCalling;
-	}
 
 	public function new(X:Float=0, Y:Float=0) 
 	{
-		isLock = false;
+		isCalling = false;
 		//super(X, Y);
 		super(X - Constants.TILE_SIZE / 2, Y - Constants.TILE_SIZE / 2);
 		
@@ -32,8 +29,8 @@ class Pentagram extends FlxSprite
 		loadTexture();
 		addAnimations();
 		
-		//Inactive();
-		Calling();
+		Inactive();
+		
 		
 		this.width = Constants.TILE_SIZE;
 		this.height = Constants.TILE_SIZE;
@@ -80,19 +77,24 @@ class Pentagram extends FlxSprite
 	public function Calling() {
 		isCalling = true;
 		isActive = false;
+		allowCollisions = FlxObject.ANY;
 		animation.play("calling");
 	}
 	
 	public function Activate() {
 		isActive = true;
 		isCalling = false;
+		allowCollisions = FlxObject.NONE;
 		animation.play("active");
 	}
 	
 	public function Inactive() {
-		isActive = false;
-		isCalling = false;
-		animation.play("inactive");
+		
+			isActive = false;
+			isCalling = false;
+			allowCollisions = FlxObject.NONE;
+			animation.play("inactive");
+		
 	}
 	
 	public function getType():Int {
