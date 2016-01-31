@@ -98,7 +98,7 @@ class PentagramManager
 				if (player.overlaps(pentagram) && !pentagram.isActive && joinRitualObjectAndPentagram(pentagram, player)) {
 					done = true;
 					pentagram.Activate();
-					enemyManager.loadEnemyes(2, EnemyType.Kid);
+					enemyManager.loadEnemyes(2, EnemyType.LitleGirl);
 					enemyManager.loadEnemyes(2, EnemyType.Police);
 					enemyManager.loadEnemyes(2, EnemyType.Farmer);
 					
